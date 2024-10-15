@@ -11,22 +11,6 @@ DevOps Engineer with hands-on experience in automating and optimizing mission-cr
 
 ---
 
-## Skills
-
-### Technical Skills
-- **Cloud & DevOps:** AWS, Docker, Kubernetes, Terraform, Jenkins, Grafana, CI/CD
-- **Programming Languages:** Python, Flutter, Dart, HTML, CSS, JavaScript, PHP
-- **Version Control & Tools:** Git, GitHub, Linux, CLI, Virtualization, Debugging
-- **Software Development:** Database Management, Containerization, Troubleshooting
-
-### Soft Skills
-- Leadership & Team Collaboration  
-- Problem Solving & Analytical Thinking  
-- Multitasking & Time Management  
-- Strong Written & Verbal Communication
-
----
-
 ## Professional Experience
 
 **Server Administrator @ Nashat Metry Office**  
@@ -52,14 +36,12 @@ _January 2023 – March 2023 | Florida, USA_
 
 ---
 
-## Projects
+## Volunteer Experience
 
-### Cyber Park - Mobile Parking Solution  
-- Developed a parking management app with **Flutter** and **Firebase**, incorporating **AR** for real-time parking slot availability and notifications.
-- Improved user experience by integrating **camera feeds** and alerts for blocked vehicles.
-
-### Docker-Based Server Setup  
-- Deployed a **Linux-based** server with **TrueNAS**, containerizing multiple services with **Docker** for rapid deployment and scalability.
+**Students' Union Multimedia Team**  
+_December 2019 – August 2021 | Arab Academy for Science & Technology, Alexandria, Egypt_  
+- Produced posters, videos, and photos for various institutional events.
+- Developed creativity and attention to detail, contributing to the team’s success in delivering engaging multimedia content.
 
 ---
 
@@ -75,12 +57,19 @@ _January 2023 – March 2023 | Florida, USA_
 
 ---
 
-## Volunteer Experience
+## Skills
 
-**Students' Union Multimedia Team**  
-_December 2019 – August 2021 | Arab Academy for Science & Technology, Alexandria, Egypt_  
-- Produced posters, videos, and photos for various institutional events.
-- Developed creativity and attention to detail, contributing to the team’s success in delivering engaging multimedia content.
+### Technical Skills
+- **Cloud & DevOps:** AWS, Docker, Kubernetes, Terraform, Jenkins, Grafana, CI/CD
+- **Programming Languages:** Python, Flutter, Dart, HTML, CSS, JavaScript, PHP
+- **Version Control & Tools:** Git, GitHub, Linux, CLI, Virtualization, Debugging
+- **Software Development:** Database Management, Containerization, Troubleshooting
+
+### Soft Skills
+- Leadership & Team Collaboration  
+- Problem Solving & Analytical Thinking  
+- Multitasking & Time Management  
+- Strong Written & Verbal Communication
 
 ---
 
