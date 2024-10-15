@@ -29,26 +29,26 @@ DevOps Engineer with hands-on experience in automating and optimizing mission-cr
 
 ## Professional Experience
 
-### Server Administrator  
-**Nashat Metry Office | Alexandria, Egypt**  
-_Jan 2024 – Mar 2024_  
-- Managed and deployed a **Linux-based server** using **TrueNAS**, improving data storage efficiency.
-- Containerized critical applications with **Docker**, resulting in a 30% reduction in deployment time.
-- Monitored and maintained server reliability, achieving 99.9% uptime during operations.
+**Server Administrator @ Nashat Metry Office**  
+_January 2024 – March 2024 | Alexandria, Egypt_  
+- Implemented and managed a Linux-based server using TrueNAS software.
+- Utilized Docker to containerize applications, ensuring efficient deployment and scalability.
+- Maintained server reliability and performance, providing a stable environment for office operations.
 
-### Graduation Project: Cyber Park  
-**Arab Academy for Science & Technology | Alexandria, Egypt**  
-_Jul 2023_  
-- Developed "Cyber Park," a **Flutter** and **Firebase** app for real-time parking management using **AR** and a network of cameras.
-- Secured user data by implementing **robust privacy measures** and compliance standards.
-- Achieved an **A+ grade** for its innovative design and seamless integration.
+**Graduation Project: Cyber Park @ Arab Academy for Science & Technology**  
+_July 2023 | Alexandria, Egypt_  
+- Developed "Cyber Park," a mobile application that improves the parking experience using Flutter and Firebase.
+- Leveraged augmented reality (AR) and a network of cameras to provide real-time parking slot availability.
+- Integrated features to alert users of vehicle obstructions and facilitate communication with other vehicle owners.
+- Implemented robust data privacy measures to secure sensitive user information.
+- Achieved an A+ grade for the project.
 
-### Web Developer (Remote)  
-**RoboNation | Florida, USA**  
-_Jan 2023 – Mar 2023_  
-- Designed and maintained a responsive website for RoboNation, improving user engagement by 25%.
-- Managed web hosting and domain services, ensuring 100% website uptime.
-- Collaborated with a multidisciplinary team to enhance site functionality and performance.
+**Web Developer (Remote) @ RoboNation**  
+_January 2023 – March 2023 | Florida, USA_  
+- Created and maintained a high-quality website for RoboNation projects.
+- Managed hosting services and purchased domains to ensure the websites were accessible and professional.
+- Collaborated with a multidisciplinary team to design and implement features.
+- Enhanced website performance and user experience through regular updates and optimizations.
 
 ---
 
@@ -65,14 +65,22 @@ _Jan 2023 – Mar 2023_
 
 ## Education
 
-### Bachelor of Computer Science  
-**Arab Academy for Science & Technology**  
-_Sep 2019 - Jul 2023_  
-- Concentrations: Programming, Data Structures, Algorithms, Software Engineering
+**Bachelor of Computer Science** | Arab Academy for Science & Technology (_September 2019 - July 2023_)  
+  Concentrations: Programming, Data Structures, Algorithms, Software Engineering  
+  - Developed practical skills and strong critical thinking through hands-on projects and coursework.
+  - Gained extensive experience in software development and problem-solving techniques.
 
-### High School Diploma  
-**Ecole Saint Vincent | Alexandria, Egypt**  
-_Sep 2016 - Jun 2019_
+**High School Diploma** | Ecole Saint Vincent (_September 2016 - June 2019_)  
+  Alexandria, Egypt
+
+---
+
+## Volunteer Experience
+
+**Students' Union Multimedia Team**  
+_December 2019 – August 2021 | Arab Academy for Science & Technology, Alexandria, Egypt_  
+- Produced posters, videos, and photos for various institutional events.
+- Developed creativity and attention to detail, contributing to the team’s success in delivering engaging multimedia content.
 
 ---
 
