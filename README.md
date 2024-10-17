@@ -21,7 +21,7 @@ _January 2024 – March 2024 | Alexandria, Egypt_
 
 **Graduation Project: Cyber Park @ Arab Academy for Science & Technology**  
 _July 2023 | Alexandria, Egypt_  
-- Developed "Cyber Park," a mobile application that improves the parking experience using Flutter and Firebase.
+- Developed "Cyber Park" a mobile application that improves the parking experience using Flutter and Firebase.
 - Leveraged augmented reality (AR) and a network of cameras to provide real-time parking slot availability.
 - Integrated features to alert users of vehicle obstructions and facilitate communication with other vehicle owners.
 - Implemented robust data privacy measures to secure sensitive user information.
