@@ -1,5 +1,4 @@
-# **Kirolos Esmat**  
-**DevOps Engineer & Mobile Developer**  
+# **DevOps Engineer & Mobile Developer**  
 
 **Email:** [kirolos.esmat10@gmail.com](mailto:kirolos.esmat10@gmail.com)  
 **LinkedIn:** [linkedin.com/in/kirolosesmat](https://www.linkedin.com/in/kirolosesmat)  
