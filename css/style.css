@@ -146,15 +146,26 @@ a {
   z-index: 1000;
   box-shadow: var(--shadow-md);
 }
+.page-sub .theme-toggle {
+  left: auto;
+  right: 24px;
+  transform: none;
+}
 @media (hover: hover) {
   .theme-toggle:hover {
     border-color: var(--border-hover);
     box-shadow: var(--shadow-lg);
     transform: translateX(-50%) scale(1.02);
   }
+  .page-sub .theme-toggle:hover {
+    transform: scale(1.02);
+  }
 }
 .theme-toggle:active {
   transform: translateX(-50%) scale(0.98);
+}
+.page-sub .theme-toggle:active {
+  transform: scale(0.98);
 }
 .theme-toggle-circle {
   width: 24px;
@@ -1431,6 +1442,11 @@ h1 {
     top: 16px;
     left: 50%;
     transform: translateX(-50%);
+  }
+  .page-sub .theme-toggle {
+    left: auto;
+    right: 16px;
+    transform: none;
   }
 }
 @media (max-width: 480px) {
