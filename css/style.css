@@ -129,7 +129,8 @@ a {
 .theme-toggle {
   position: fixed;
   top: 24px;
-  right: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 56px;
   height: 30px;
   background: var(--surface-glass);
@@ -149,11 +150,11 @@ a {
   .theme-toggle:hover {
     border-color: var(--border-hover);
     box-shadow: var(--shadow-lg);
-    transform: scale(1.02);
+    transform: translateX(-50%) scale(1.02);
   }
 }
 .theme-toggle:active {
-  transform: scale(0.98);
+  transform: translateX(-50%) scale(0.98);
 }
 .theme-toggle-circle {
   width: 24px;
@@ -847,6 +848,7 @@ h1 {
   border-radius: 8px;
   font-weight: 700;
   font-size: 0.62rem;
+  line-height: 1.2;
   text-align: center;
   box-shadow: 0 4px 12px rgba(230, 0, 0, 0.3);
   z-index: 2;
@@ -1152,9 +1154,8 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   padding: 25px 0;
-  padding-top: 120px;
   mask-image: radial-gradient(
-    ellipse 55% 45% at 50% 55%,
+    ellipse 55% 45% at 50% 50%,
     transparent 0%,
     transparent 30%,
     rgba(0, 0, 0, 0.1) 45%,
@@ -1163,7 +1164,7 @@ h1 {
     black 85%
   );
   -webkit-mask-image: radial-gradient(
-    ellipse 55% 45% at 50% 55%,
+    ellipse 55% 45% at 50% 50%,
     transparent 0%,
     transparent 30%,
     rgba(0, 0, 0, 0.1) 45%,
@@ -1174,27 +1175,10 @@ h1 {
   contain: layout style;
 }
 
-/* Subpages: fade out at top where title sits, visible elsewhere */
-.page-sub .testimonials-bg {
-  padding-top: 140px;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    transparent 22%,
-    rgba(0, 0, 0, 0.1) 26%,
-    rgba(0, 0, 0, 0.4) 32%,
-    black 40%,
-    black 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    transparent 22%,
-    rgba(0, 0, 0, 0.1) 26%,
-    rgba(0, 0, 0, 0.4) 32%,
-    black 40%,
-    black 100%
-  );
+/* Subpages: hide background text entirely */
+.page-sub .testimonials-bg,
+.page-sub #snake-canvas {
+  display: none !important;
 }
 .testimonial-row {
   display: flex;
@@ -1317,6 +1301,16 @@ h1 {
   display: none;
 }
 
+/* Tablet / iPad adjustments */
+@media (max-width: 1024px) {
+  .testimonials-bg {
+    padding: 15px 0;
+  }
+  .testimonial-item {
+    font-size: 0.55rem;
+  }
+}
+
 @media (max-width: 768px) {
   body.page-home {
     padding: 30px 15px;
@@ -1435,7 +1429,8 @@ h1 {
   }
   .theme-toggle {
     top: 16px;
-    right: 16px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @media (max-width: 480px) {
