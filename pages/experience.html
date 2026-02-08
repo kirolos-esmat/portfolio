@@ -121,8 +121,10 @@
         transition: transform 0.3s ease;
       }
 
-      .timeline-item:hover .detail-card::before {
-        transform: scaleX(1);
+      @media (hover: hover) {
+        .timeline-item:hover .detail-card::before {
+          transform: scaleX(1);
+        }
       }
 
       .timeline-content .detail-card .card-header {
@@ -135,16 +137,18 @@
       }
 
       /* Hover states */
-      .timeline-item:hover .timeline-dot {
-        transform: scale(1.2);
-        box-shadow: 0 0 0 3px #3b82f6;
-        transition: all 0.25s ease;
-      }
+      @media (hover: hover) {
+        .timeline-item:hover .timeline-dot {
+          transform: scale(1.2);
+          box-shadow: 0 0 0 3px #3b82f6;
+          transition: all 0.25s ease;
+        }
 
-      .timeline-item:hover .detail-card {
-        border-color: #3b82f6;
-        box-shadow: 0 2px 16px rgba(59, 130, 246, 0.1);
-        transition: all 0.25s ease;
+        .timeline-item:hover .detail-card {
+          border-color: #3b82f6;
+          box-shadow: 0 2px 16px rgba(59, 130, 246, 0.1);
+          transition: all 0.25s ease;
+        }
       }
 
       /* Card icon override */
@@ -157,9 +161,11 @@
         box-shadow: none;
       }
 
-      .timeline-item:hover .card-icon {
-        background: #3b82f6;
-        border-color: #3b82f6;
+      @media (hover: hover) {
+        .timeline-item:hover .card-icon {
+          background: #3b82f6;
+          border-color: #3b82f6;
+        }
       }
 
       .timeline-content .card-icon svg {
@@ -170,8 +176,10 @@
         stroke-width: 1.75;
       }
 
-      .timeline-item:hover .card-icon svg {
-        stroke: #fff;
+      @media (hover: hover) {
+        .timeline-item:hover .card-icon svg {
+          stroke: #fff;
+        }
       }
 
       .timeline-content .card-title {
@@ -199,10 +207,12 @@
         transition: all 0.2s ease;
       }
 
-      .timeline-content .card-tag:hover {
-        background: #3b82f6;
-        border-color: #3b82f6;
-        color: #fff;
+      @media (hover: hover) {
+        .timeline-content .card-tag:hover {
+          background: #3b82f6;
+          border-color: #3b82f6;
+          color: #fff;
+        }
       }
 
       /* Exp date badge - solid, readable */
