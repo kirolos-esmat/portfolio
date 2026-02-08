@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience — Kirolos Esmat</title>
+    <meta
+      name="description"
+      content="Professional experience of Kirolos Esmat — DevOps, Server Admin, Web Development."
+    />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/retropix" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .timeline {
+        position: relative;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 120px 60px 1fr;
+        align-items: start;
+        position: relative;
+      }
+
+      .timeline-date {
+        text-align: right;
+        padding-top: 28px;
+        padding-right: 16px;
+      }
+
+      .timeline-date-text {
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: #3b82f6;
+        line-height: 1.3;
+        letter-spacing: 0.02em;
+      }
+
+      .timeline-date-duration {
+        font-size: 0.65rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        margin-top: 4px;
+      }
+
+      .timeline-connector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        padding-top: 28px;
+      }
+
+      .timeline-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #3b82f6;
+        border: 3px solid var(--bg);
+        box-shadow: 0 0 0 2px #3b82f6;
+        z-index: 10;
+        flex-shrink: 0;
+        position: relative;
+      }
+
+      .timeline-dot::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #fff;
+      }
+
+      .timeline-line {
+        width: 2px;
+        flex-grow: 1;
+        background: var(--border);
+        margin-top: 0;
+      }
+
+      .timeline-item:last-child .timeline-line {
+        background: linear-gradient(to bottom, var(--border), transparent);
+      }
+
+      .timeline-content {
+        padding-left: 16px;
+        padding-bottom: 2rem;
+      }
+
+      .timeline-content .detail-card {
+        margin-bottom: 0;
+        animation: none;
+        opacity: 1;
+      }
+
+      /* Accent top bar */
+      .timeline-content .detail-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #3b82f6;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .timeline-item:hover .detail-card::before {
+        transform: scaleX(1);
+      }
+
+      .timeline-content .detail-card .card-header {
+        padding: 24px 24px 0;
+        margin-bottom: 0;
+      }
+
+      .timeline-content .detail-card .card-body {
+        padding: 16px 24px 0;
+      }
+
+      /* Hover states */
+      .timeline-item:hover .timeline-dot {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 3px #3b82f6;
+        transition: all 0.25s ease;
+      }
+
+      .timeline-item:hover .detail-card {
+        border-color: #3b82f6;
+        box-shadow: 0 2px 16px rgba(59, 130, 246, 0.1);
+        transition: all 0.25s ease;
+      }
+
+      /* Card icon override */
+      .timeline-content .card-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        background: rgba(59, 130, 246, 0.08);
+        border: 1px solid rgba(59, 130, 246, 0.15);
+        box-shadow: none;
+      }
+
+      .timeline-item:hover .card-icon {
+        background: #3b82f6;
+        border-color: #3b82f6;
+      }
+
+      .timeline-content .card-icon svg {
+        width: 21px;
+        height: 21px;
+        color: #3b82f6;
+        stroke: #3b82f6;
+        stroke-width: 1.75;
+      }
+
+      .timeline-item:hover .card-icon svg {
+        stroke: #fff;
+      }
+
+      .timeline-content .card-title {
+        font-size: 1.08rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .timeline-content .card-subtitle {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 2px;
+        font-weight: 500;
+      }
+
+      /* Tag pills */
+      .timeline-content .card-tag {
+        padding: 4px 11px;
+        background: rgba(59, 130, 246, 0.06);
+        border: 1px solid rgba(59, 130, 246, 0.12);
+        border-radius: 100px;
+        font-size: 0.7rem;
+        color: #3b82f6;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .timeline-content .card-tag:hover {
+        background: #3b82f6;
+        border-color: #3b82f6;
+        color: #fff;
+      }
+
+      /* Exp date badge - solid, readable */
+      .exp-date {
+        display: none;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 10px;
+        background: var(--accent);
+        border: none;
+        border-radius: 6px;
+        font-size: 0.65rem;
+        color: #fff;
+        font-weight: 700;
+        margin-top: 6px;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 768px) {
+        .timeline-item {
+          grid-template-columns: 28px 1fr;
+        }
+
+        .timeline-date {
+          display: none;
+        }
+
+        .timeline-connector {
+          padding-top: 24px;
+        }
+
+        .timeline-content {
+          padding-left: 12px;
+          padding-bottom: 1.5rem;
+        }
+
+        .exp-date {
+          display: inline-flex;
+        }
+
+        .timeline-dot {
+          width: 12px;
+          height: 12px;
+        }
+
+        .timeline-dot::after {
+          width: 4px;
+          height: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body class="page-sub" data-theme="light">
+    <a href="../index.html" class="back-nav">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+      Home
+    </a>
+
+    <div
+      class="theme-toggle"
+      onclick="toggleTheme()"
+      role="button"
+      aria-label="Toggle dark mode"
+      tabindex="0"
+    >
+      <div class="theme-toggle-circle">
+        <svg
+          class="theme-toggle-sun"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg
+          class="theme-toggle-moon"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="sub-container">
+      <div class="page-header-box">
+        <div class="page-title">Experience</div>
+        <p class="page-subtitle">My professional journey so far</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Hedwig Devs -->
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <div class="timeline-date-text">Dec 2024<br />— Present</div>
+          </div>
+          <div class="timeline-connector">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="detail-card">
+              <div class="card-header">
+                <div class="card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"
+                    />
+                    <path
+                      d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"
+                    />
+                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 3 0 3 0" />
+                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-3 0-3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="card-title">Founder & Developer</div>
+                  <div class="card-subtitle">Hedwig Devs</div>
+                  <span class="exp-date">Dec 2024 — Present</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <p>
+                  Founded Hedwig Devs to build and publish mobile applications.
+                  Developed and maintained the Skrew Calculator — a mobile app
+                  designed to simplify scorekeeping for multiplayer games.
+                </p>
+                <ul>
+                  <li>Easy-to-use score tracking for multiplayer card games</li>
+                  <li>History page for saved games and player performance</li>
+                  <li>Minimalist UI for a seamless experience</li>
+                  <li>
+                    Managed full product lifecycle: ideation, development,
+                    testing, and deployment
+                  </li>
+                </ul>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag">Flutter</span>
+                <span class="card-tag">Dart</span>
+                <span class="card-tag">Firebase</span>
+                <span class="card-tag">App Store</span>
+                <span class="card-tag">CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nashat Metry -->
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <div class="timeline-date-text">Jan — Mar<br />2024</div>
+            <div class="timeline-date-duration">3 months</div>
+          </div>
+          <div class="timeline-connector">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="detail-card">
+              <div class="card-header">
+                <div class="card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                    <line x1="6" y1="6" x2="6.01" y2="6" />
+                    <line x1="6" y1="18" x2="6.01" y2="18" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="card-title">Server Administrator</div>
+                  <div class="card-subtitle">
+                    Nashat Metry Office · Alexandria, Egypt
+                  </div>
+                  <span class="exp-date">Jan 2024 — Mar 2024</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <p>
+                  Implemented and managed a Linux-based server infrastructure
+                  for office operations, ensuring reliability and performance.
+                </p>
+                <ul>
+                  <li>
+                    Implemented and managed a Linux-based server using TrueNAS
+                    software
+                  </li>
+                  <li>
+                    Utilized Docker to containerize applications, ensuring
+                    efficient deployment and scalability
+                  </li>
+                  <li>
+                    Maintained server reliability and performance, providing a
+                    stable environment for office operations
+                  </li>
+                </ul>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag">Linux</span>
+                <span class="card-tag">Docker</span>
+                <span class="card-tag">TrueNAS</span>
+                <span class="card-tag">Bash</span>
+                <span class="card-tag">Networking</span>
+                <span class="card-tag">System Admin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RoboNation -->
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <div class="timeline-date-text">Jan — Mar<br />2023</div>
+            <div class="timeline-date-duration">3 months</div>
+          </div>
+          <div class="timeline-connector">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="detail-card">
+              <div class="card-header">
+                <div class="card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                    <line x1="14" y1="4" x2="10" y2="20" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="card-title">Web Developer</div>
+                  <div class="card-subtitle">
+                    RoboNation · Florida, United States
+                  </div>
+                  <span class="exp-date">Jan 2023 — Mar 2023</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <p>
+                  Created and maintained a high-quality website for RoboNation
+                  projects, collaborating with a multidisciplinary team.
+                </p>
+                <ul>
+                  <li>
+                    Created and maintained a high-quality website for RoboNation
+                    projects
+                  </li>
+                  <li>
+                    Managed hosting services and purchased domains to ensure
+                    websites were accessible and professional
+                  </li>
+                  <li>
+                    Collaborated with a multidisciplinary team to design and
+                    implement features
+                  </li>
+                  <li>
+                    Enhanced website performance and user experience through
+                    regular updates and optimizations
+                  </li>
+                </ul>
+              </div>
+              <div class="card-tags">
+                <span class="card-tag">HTML</span>
+                <span class="card-tag">CSS</span>
+                <span class="card-tag">JavaScript</span>
+                <span class="card-tag">Hosting</span>
+                <span class="card-tag">Performance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-info" style="animation-delay: 0.1s">
+        <p class="footer-text">
+          &copy; 2025 Kirolos Esmat · <a href="../index.html">Back to Home</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="testimonials-bg" id="testimonials-bg"></div>
+    <div class="mobile-bg-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <canvas id="snake-canvas"></canvas>
+    <div class="toast" id="toast">Email copied!</div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
