@@ -181,7 +181,7 @@
           width 0.6s,
           height 0.6s;
       }
-      @media (min-width: 769px) {
+      @media (min-width: 481px) {
         .download-btn.app-store:hover::before {
           width: 300px;
           height: 300px;
@@ -214,7 +214,7 @@
           width 0.6s,
           height 0.6s;
       }
-      @media (min-width: 769px) {
+      @media (min-width: 481px) {
         .download-btn.google-play:hover::before {
           width: 300px;
           height: 300px;
@@ -264,7 +264,7 @@
         opacity: 0;
         animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
       }
-      @media (min-width: 769px) {
+      @media (min-width: 481px) {
         .back-home:hover {
           background: var(--button-primary-hover);
           border-color: var(--text-tertiary);
@@ -329,7 +329,7 @@
         transition: opacity 0.4s ease;
       }
 
-      @media (min-width: 769px) {
+      @media (min-width: 481px) {
         .gallery-item:hover::before {
           opacity: 1;
         }
@@ -366,7 +366,7 @@
         animation-delay: -4.8s;
       }
 
-      @media (min-width: 769px) {
+      @media (min-width: 481px) {
         .gallery-item:hover img {
           transform: translateY(-8px) scale(1.02);
           filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.6));
@@ -384,14 +384,7 @@
         }
       }
 
-      @media (max-width: 1024px) {
-        .gallery {
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-          gap: 1.5rem;
-        }
-      }
-
-      @media (max-width: 768px) {
+      @media (max-width: 480px) {
         .container {
           padding: 5rem 1.5rem 1.5rem;
         }
