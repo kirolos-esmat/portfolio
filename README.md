@@ -177,7 +177,23 @@ Contributions are welcome! Feel free to:
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License with Attribution Requirement**.
+
+### ⚠️ Attribution Required
+
+If you use, modify, or distribute this code, you **must** include attribution to:
+
+**Kirolos Esmat**
+- Portfolio: [kirolos-esmat.github.io/portfolio](https://kirolos-esmat.github.io/portfolio)
+- GitHub: [@kirolos-esmat](https://github.com/kirolos-esmat)
+- Email: kirolos.esmat10@gmail.com
+
+Attribution can be provided in:
+- Website footer
+- README or documentation
+- Source code comments
+
+See the [LICENSE](LICENSE) file for full details.
 
 ## 📧 Contact
 
