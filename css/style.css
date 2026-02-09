@@ -119,6 +119,40 @@ body.page-sub {
   text-align: left;
 }
 
+/* ========== MOUSE SPOTLIGHT ========== */
+.mouse-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(251, 146, 60, 0.12),
+    transparent 50%
+  );
+}
+
+/* Cyan version for dark mode */
+[data-theme="dark"] .mouse-spotlight {
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(34, 211, 238, 0.08),
+    transparent 50%
+  );
+}
+
+body.page-home .mouse-spotlight {
+  opacity: 1;
+}
+
+@media (max-width: 1023px) {
+  .mouse-spotlight {
+    display: none;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1007,22 +1041,33 @@ h1 {
   padding: 0;
   margin-bottom: 16px;
   box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   overflow: hidden;
   position: relative;
+  transform: translateY(0);
 }
 .detail-card::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #3b82f6;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+    rgba(59, 130, 246, 0.08) 0%, 
+    transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.detail-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0);
+  transition: box-shadow 0.3s ease;
+  pointer-events: none;
 }
 .detail-card:nth-child(2) {
   animation-delay: 0.08s;
@@ -1042,12 +1087,22 @@ h1 {
 .detail-card:nth-child(7) {
   animation-delay: 0.48s;
 }
-.detail-card:hover {
-  border-color: #3b82f6;
-  box-shadow: 0 2px 16px rgba(59, 130, 246, 0.1);
-}
-.detail-card:hover::before {
-  transform: scaleX(1);
+@media (min-width: 1024px) {
+  .detail-card:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    background: var(--surface);
+    box-shadow: 
+      0 12px 48px -12px rgba(59, 130, 246, 0.2),
+      0 8px 24px -8px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(59, 130, 246, 0.08);
+    transform: translateY(-8px) scale(1.005);
+  }
+  .detail-card:hover::before {
+    opacity: 1;
+  }
+  .detail-card:hover::after {
+    box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.15);
+  }
 }
 
 
@@ -1059,31 +1114,37 @@ h1 {
   margin-bottom: 0;
 }
 .detail-card .card-icon {
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
   border-radius: 12px;
-  background: rgba(59, 130, 246, 0.08);
-  border: 1px solid rgba(59, 130, 246, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.detail-card:hover .card-icon {
-  background: #3b82f6;
-  border-color: #3b82f6;
-}
-.detail-card:hover .card-icon svg {
-  stroke: #fff;
+@media (min-width: 1024px) {
+  .detail-card:hover .card-icon {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+  }
+  .detail-card:hover .card-icon svg {
+    stroke: #3b82f6;
+    transform: scale(1.1);
+  }
 }
 
 .detail-card .card-icon svg {
-  width: 21px;
-  height: 21px;
-  stroke: #3b82f6;
+  width: 22px;
+  height: 22px;
+  stroke: var(--text-primary);
   stroke-width: 1.75;
-  transition: stroke 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .detail-card .card-title {
   font-size: 1.08rem;
@@ -1147,10 +1208,14 @@ h1 {
   font-weight: 600;
   transition: all 0.2s ease;
 }
-.detail-card .card-tag:hover {
-  background: #3b82f6;
-  border-color: #3b82f6;
-  color: #fff;
+@media (min-width: 1024px) {
+  .detail-card .card-tag:hover {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  }
 }
 
 

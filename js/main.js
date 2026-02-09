@@ -70,6 +70,32 @@ function initTyping() {
 }
 initTyping();
 
+// ============ MOUSE SPOTLIGHT EFFECT ============
+const spotlight = document.querySelector('.mouse-spotlight');
+if (spotlight) {
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+  const speed = 0.15; // Lower = smoother but slower
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function updateSpotlight() {
+    // Smooth lerp animation
+    currentX += (mouseX - currentX) * speed;
+    currentY += (mouseY - currentY) * speed;
+    
+    spotlight.style.setProperty('--mouse-x', `${currentX}px`);
+    spotlight.style.setProperty('--mouse-y', `${currentY}px`);
+    
+    requestAnimationFrame(updateSpotlight);
+  }
+  
+  updateSpotlight();
+}
+
 // ============ BACKGROUND SKILLS TEXT ============
 const isSubPage = document.body.classList.contains("page-sub");
 
