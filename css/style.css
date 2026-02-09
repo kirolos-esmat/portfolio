@@ -145,7 +145,7 @@ a {
   z-index: 1000;
   box-shadow: var(--shadow-md);
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .theme-toggle:hover {
     border-color: var(--border-hover);
     box-shadow: var(--shadow-lg);
@@ -223,7 +223,7 @@ a {
   stroke-width: 2;
   transition: all 0.2s ease;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .back-nav:hover {
     border-color: var(--border-hover);
     color: var(--text-primary);
@@ -411,7 +411,7 @@ header {
 [data-theme="light"] .avatar-img {
   filter: none;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .avatar:hover {
     transform: scale(1.08) translateY(-3px);
     box-shadow:
@@ -551,7 +551,7 @@ h1 {
   flex-shrink: 0;
   opacity: 0.8;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .badge:hover {
     border-color: var(--border-hover);
     transform: translateY(-1px);
@@ -632,7 +632,7 @@ h1 {
   transition: all 0.2s ease;
   flex-shrink: 0;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .nav-button:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-xl);
@@ -709,7 +709,7 @@ h1 {
   right: 0;
   height: 35px;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .nav-item:hover .dropdown {
     opacity: 1;
     visibility: visible;
@@ -731,7 +731,7 @@ h1 {
   font-size: 0.85rem;
   text-align: left;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .dropdown-item:hover {
     background: var(--hover-bg);
     border-color: var(--border-subtle);
@@ -815,7 +815,7 @@ h1 {
   opacity: 0.7;
   transition: all 0.2s ease;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .contact-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
@@ -873,7 +873,7 @@ h1 {
   text-decoration: none;
   transition: var(--transition);
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .footer-text a:hover {
     color: var(--text-primary);
   }
@@ -923,7 +923,7 @@ h1 {
 .detail-card:nth-child(7) {
   animation-delay: 0.48s;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .detail-card:hover {
     border-color: #3b82f6;
     box-shadow: 0 2px 16px rgba(59, 130, 246, 0.1);
@@ -952,7 +952,7 @@ h1 {
   flex-shrink: 0;
   transition: all 0.25s ease;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .detail-card:hover .card-icon {
     background: #3b82f6;
     border-color: #3b82f6;
@@ -1030,7 +1030,7 @@ h1 {
   font-weight: 600;
   transition: all 0.2s ease;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .detail-card .card-tag:hover {
     background: #3b82f6;
     border-color: #3b82f6;
@@ -1092,7 +1092,7 @@ h1 {
   gap: 6px;
   box-shadow: var(--shadow-sm);
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .skill-chip:hover {
     border-color: var(--accent);
     color: var(--accent);
@@ -1122,7 +1122,7 @@ h1 {
   flex-shrink: 0;
   transition: all 0.25s ease;
 }
-@media (hover: hover), (min-width: 768px) {
+@media (hover: hover) {
   .detail-card:hover .cert-detail-icon {
     background: #3b82f6;
     border-color: #3b82f6;
@@ -1427,11 +1427,8 @@ h1 {
     font-size: 0.78rem;
   }
   .theme-toggle {
-    top: 16px;
-    right: 16px;
-  }
-  .page-sub .theme-toggle {
-    right: 16px;
+    top: 24px;
+    right: 24px;
   }
 }
 @media (max-width: 480px) {
