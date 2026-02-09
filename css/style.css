@@ -95,9 +95,6 @@ body {
   background: var(--bg);
   color: var(--text-primary);
   line-height: 1.6;
-  transition:
-    background 0.4s ease,
-    color 0.3s ease;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -1203,7 +1200,6 @@ h1 {
 .testimonial-char {
   display: inline-block;
   color: var(--text-hidden);
-  transition: color 0.04s linear;
 }
 .testimonial-username {
   font-style: normal;
@@ -1420,8 +1416,18 @@ h1 {
     top: 24px;
     right: 24px;
   }
-}
-@media (max-width: 480px) {
+  /* Reduce animations on mobile for performance */
+  header,
+  .detail-card,
+  .nav-container,
+  .footer-info,
+  .contact-row {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .avatar {
+    animation: none;
+  }
   .mobile-bg-orbs .orb {
     filter: blur(70px);
     opacity: 0.12;

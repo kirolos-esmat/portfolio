@@ -654,9 +654,11 @@ function wrapChars(text) {
     .join("");
 }
 
+const isMobile = window.innerWidth <= 480;
+
 function initBackgroundText() {
   const testimonialsBg = document.getElementById("testimonials-bg");
-  if (!testimonialsBg) return;
+  if (!testimonialsBg || isMobile) return;
   skillLines.forEach((row, rowIndex) => {
     const rowEl = document.createElement("div");
     rowEl.className = "testimonial-row";
@@ -809,7 +811,7 @@ function checkFoodCollision() {
     spawnFood();
   }
 }
-if (canvas) setTimeout(spawnFood, 500);
+if (canvas && !isMobile) setTimeout(spawnFood, 500);
 
 let foodPulse = 0;
 function drawSnake(timestamp) {
@@ -898,7 +900,7 @@ function cacheCharPositions() {
     });
   });
 }
-setTimeout(initCharElements, 50);
+if (!isMobile) setTimeout(initCharElements, 50);
 
 let cachedColors = null,
   cachedHiddenRgb = null,
@@ -1034,10 +1036,15 @@ function illuminateTestimonials() {
 let lastUpdate = 0,
   lastIllumination = 0;
 const updateInterval = 70,
-  illuminationInterval = 50;
+  illuminationInterval = 100;
 
+let gameRunning = true;
 function gameLoop(timestamp) {
   if (!canvas) return;
+  if (document.hidden) {
+    requestAnimationFrame(gameLoop);
+    return;
+  }
   if (timestamp - lastUpdate >= updateInterval) {
     updateSnake();
     checkFoodCollision();
@@ -1050,7 +1057,7 @@ function gameLoop(timestamp) {
   }
   requestAnimationFrame(gameLoop);
 }
-if (canvas) setTimeout(() => requestAnimationFrame(gameLoop), 100);
+if (canvas && !isMobile) setTimeout(() => requestAnimationFrame(gameLoop), 100);
 
 let resizeTimeout = null;
 window.addEventListener("resize", () => {
