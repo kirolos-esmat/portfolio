@@ -27,6 +27,13 @@
       rel="stylesheet"
     />
     <link href="https://fonts.cdnfonts.com/css/retropix" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      crossorigin
+    />
+    <link rel="preload" as="image" href="images/logo.png" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="page-home" data-theme="light">
@@ -69,7 +76,12 @@
       <!-- ======== HERO ======== -->
       <header>
         <div class="avatar">
-          <img src="images/logo.png" alt="Kirolos Esmat" class="avatar-img" />
+          <img
+            src="images/logo.png"
+            alt="Kirolos Esmat"
+            class="avatar-img"
+            loading="lazy"
+          />
         </div>
         <h1>Kirolos Esmat</h1>
         <p class="hero-statement">
@@ -562,6 +574,6 @@
     <canvas id="snake-canvas"></canvas>
     <div class="toast" id="toast">Email copied!</div>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
