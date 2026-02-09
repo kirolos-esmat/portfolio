@@ -709,7 +709,7 @@ h1 {
   right: 0;
   height: 35px;
 }
-@media (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .nav-item:hover .dropdown {
     opacity: 1;
     visibility: visible;

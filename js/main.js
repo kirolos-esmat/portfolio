@@ -1079,19 +1079,3 @@ window.addEventListener(
   },
   { passive: true },
 );
-
-// ============ TOUCH DROPDOWN HANDLING ============
-// On touch devices, first tap on nav-button navigates directly (no dropdown).
-// Dropdown only shows on mouse hover (desktop).
-(function initTouchNav() {
-  const isTouchDevice =
-    "ontouchstart" in window || navigator.maxTouchPoints > 0;
-  if (!isTouchDevice) return;
-  document.querySelectorAll(".nav-item").forEach((item) => {
-    const btn = item.querySelector(".nav-button");
-    const dropdown = item.querySelector(".dropdown");
-    if (!btn || !dropdown) return;
-    // Hide dropdown entirely on touch devices
-    dropdown.style.display = "none";
-  });
-})();
