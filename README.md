@@ -202,13 +202,9 @@ See the [LICENSE](LICENSE) file for full details.
 - LinkedIn: [linkedin.com/in/kirolos-esmat](https://www.linkedin.com/in/kirolos-esmat/)
 - GitHub: [@kirolosesmat](https://github.com/yourusername)
 
-## 🙏 Acknowledgments
+## 🙏 Acknowledgment
 
-- Icons: Custom SVG icons
-- Fonts: [Inter](https://fonts.google.com/specimen/Inter) by Google Fonts
-- Inspiration: Modern web design trends and glassmorphism aesthetics
-
----
+- Special thanks: [Mitch Koko](https://github.com/mitchkoko/mitchkokoapp) for design inspiration
 
 ⭐ If you found this portfolio helpful, please consider giving it a star!
 
