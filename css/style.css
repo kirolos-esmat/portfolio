@@ -77,17 +77,124 @@
 }
 
 @media (max-width: 480px) {
-  [data-theme="dark"] {
-    --bg: #181818;
-    --surface: #232323;
-    --surface-hover: #232323;
-    --surface-glass: #232323;
-    --accent-gradient: none;
-    --shadow-sm: none;
-    --shadow-md: none;
-    --shadow-lg: none;
-    --shadow-xl: none;
-    --shadow-glow: none;
+  body.page-home {
+    padding: 30px 15px;
+  }
+  /* Hide text background & snake on mobile */
+  .testimonials-bg,
+  #snake-canvas {
+    display: none !important;
+  }
+  /* Show floating orbs instead */
+  .mobile-bg-orbs {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .mobile-bg-orbs .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    will-change: transform;
+  }
+  .mobile-bg-orbs .orb-1 {
+    width: 250px;
+    height: 250px;
+    background: var(--accent);
+    top: -60px;
+    right: -80px;
+    animation: float-orb-1 18s ease-in-out infinite;
+  }
+  .mobile-bg-orbs .orb-2 {
+    width: 200px;
+    height: 200px;
+    background: #a855f7;
+    bottom: 15%;
+    left: -60px;
+    animation: float-orb-2 22s ease-in-out infinite;
+  }
+  .mobile-bg-orbs .orb-3 {
+    width: 180px;
+    height: 180px;
+    background: #3b82f6;
+    top: 40%;
+    right: -40px;
+    animation: float-orb-3 15s ease-in-out infinite;
+  }
+  .mobile-bg-orbs .orb-4 {
+    width: 150px;
+    height: 150px;
+    background: #10b981;
+    bottom: -40px;
+    left: 30%;
+    animation: float-orb-1 20s ease-in-out infinite reverse;
+  }
+  /* Dark theme: brighter orbs */
+  [data-theme="dark"] .mobile-bg-orbs .orb {
+    opacity: 0.12;
+    filter: blur(90px);
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .page-title {
+    font-size: 1.6rem;
+  }
+  .hero-statement {
+    font-size: 1.1rem;
+  }
+  .avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 26px;
+    border-radius: 15px;
+  }
+  .bio {
+    font-size: 0.88rem;
+  }
+  .nav-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .nav-button {
+    padding: 12px 16px;
+    min-width: unset;
+    width: 100%;
+    font-size: 0.82rem;
+    justify-content: center;
+  }
+  .dropdown {
+    min-width: 200px;
+  }
+  .contact-row {
+    gap: 8px;
+  }
+  .contact-btn {
+    padding: 10px 14px;
+    font-size: 0.78rem;
+  }
+  .sub-container {
+    padding: 80px 20px 40px;
+  }
+  .back-nav {
+    top: 16px;
+    left: 16px;
+    padding: 7px 12px;
+    font-size: 0.78rem;
+  }
+  .theme-toggle {
+    top: 24px;
+    right: 24px;
   }
 }
 

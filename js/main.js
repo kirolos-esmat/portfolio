@@ -654,11 +654,11 @@ function wrapChars(text) {
     .join("");
 }
 
-const isMobile = window.innerWidth <= 480;
+// ...existing code...
 
 function initBackgroundText() {
   const testimonialsBg = document.getElementById("testimonials-bg");
-  if (!testimonialsBg || isMobile) return;
+  if (!testimonialsBg) return;
   skillLines.forEach((row, rowIndex) => {
     const rowEl = document.createElement("div");
     rowEl.className = "testimonial-row";
@@ -811,7 +811,7 @@ function checkFoodCollision() {
     spawnFood();
   }
 }
-if (canvas && !isMobile) setTimeout(spawnFood, 500);
+if (canvas) setTimeout(spawnFood, 500);
 
 let foodPulse = 0;
 function drawSnake(timestamp) {
@@ -900,7 +900,7 @@ function cacheCharPositions() {
     });
   });
 }
-if (!isMobile) setTimeout(initCharElements, 50);
+setTimeout(initCharElements, 50);
 
 let cachedColors = null,
   cachedHiddenRgb = null,
@@ -1057,7 +1057,7 @@ function gameLoop(timestamp) {
   }
   requestAnimationFrame(gameLoop);
 }
-if (canvas && !isMobile) setTimeout(() => requestAnimationFrame(gameLoop), 100);
+if (canvas) setTimeout(() => requestAnimationFrame(gameLoop), 100);
 
 let resizeTimeout = null;
 window.addEventListener("resize", () => {
