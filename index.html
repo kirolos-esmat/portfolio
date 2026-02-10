@@ -35,6 +35,47 @@
     />
     <link rel="preload" as="image" href="images/logo.png" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Projects live badge */
+      .nav-button {
+        position: relative;
+      }
+      @keyframes pulseNavLive {
+        0% {
+          box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.35);
+        }
+        70% {
+          box-shadow: 0 0 0 8px rgba(39, 201, 63, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(39, 201, 63, 0);
+        }
+      }
+      .nav-button .dot::after {
+        /* keep pulse keyframes available for dropdown dots */
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        animation: pulseNavLive 1.6s infinite;
+        opacity: 0.9;
+      }
+      /* live dot */
+      .live-dot {
+        width: 8px;
+        height: 8px;
+        background: #27c93f;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-left: auto;
+        box-shadow: 0 0 8px rgba(39, 201, 63, 0.6);
+        animation: liveDotBlink 1.5s ease-in-out infinite;
+      }
+      @keyframes liveDotBlink {
+        0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(39, 201, 63, 0.6); }
+        50% { opacity: 0.4; box-shadow: 0 0 4px rgba(39, 201, 63, 0.3); }
+      }
+    </style>
   </head>
   <body class="page-home" data-theme="light">
     <div
@@ -194,6 +235,7 @@
                 <strong>Skrew Calculator</strong>
                 <small>Card game score tracker</small>
               </span>
+              <span class="live-dot" aria-hidden="true"></span>
             </a>
             <a href="pages/projects.html" class="dropdown-item">
               <svg

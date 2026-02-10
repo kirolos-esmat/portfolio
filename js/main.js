@@ -71,13 +71,15 @@ function initTyping() {
 initTyping();
 
 // ============ MOUSE SPOTLIGHT EFFECT ============
-const spotlight = document.querySelector('.mouse-spotlight');
+const spotlight = document.querySelector(".mouse-spotlight");
 if (spotlight) {
-  let mouseX = 0, mouseY = 0;
-  let currentX = 0, currentY = 0;
+  let mouseX = 0,
+    mouseY = 0;
+  let currentX = 0,
+    currentY = 0;
   const speed = 0.15; // Lower = smoother but slower
 
-  document.addEventListener('mousemove', (e) => {
+  document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
@@ -86,13 +88,13 @@ if (spotlight) {
     // Smooth lerp animation
     currentX += (mouseX - currentX) * speed;
     currentY += (mouseY - currentY) * speed;
-    
-    spotlight.style.setProperty('--mouse-x', `${currentX}px`);
-    spotlight.style.setProperty('--mouse-y', `${currentY}px`);
-    
+
+    spotlight.style.setProperty("--mouse-x", `${currentX}px`);
+    spotlight.style.setProperty("--mouse-y", `${currentY}px`);
+
     requestAnimationFrame(updateSpotlight);
   }
-  
+
   updateSpotlight();
 }
 
@@ -173,7 +175,6 @@ const homeLines = [
     "Design - UI/UX principles for clean user interfaces",
   ],
   [
-    "Open Source - Contributing to community-driven projects",
     "Documentation - Clear technical writing and knowledge sharing",
     "Testing - Unit tests and integration testing strategies",
     "Deployment - Zero-downtime releases and rollback strategies",
@@ -1088,48 +1089,48 @@ function gameLoop(timestamp) {
 // Handle dropdown clicks on mobile devices (< 1024px screens)
 function initMobileDropdowns() {
   const isMobile = () => window.innerWidth < 1024;
-  
-  const navItems = document.querySelectorAll('.nav-item');
-  
-  navItems.forEach(navItem => {
-    const navButton = navItem.querySelector('.nav-button');
-    const dropdown = navItem.querySelector('.dropdown');
-    
+
+  const navItems = document.querySelectorAll(".nav-item");
+
+  navItems.forEach((navItem) => {
+    const navButton = navItem.querySelector(".nav-button");
+    const dropdown = navItem.querySelector(".dropdown");
+
     if (!navButton || !dropdown) return;
-    
+
     // Toggle dropdown on click for mobile
-    navButton.addEventListener('click', (e) => {
+    navButton.addEventListener("click", (e) => {
       if (!isMobile()) return; // Only on mobile
-      
+
       e.preventDefault();
       e.stopPropagation();
-      
+
       // Close other dropdowns
-      navItems.forEach(item => {
+      navItems.forEach((item) => {
         if (item !== navItem) {
-          item.classList.remove('active');
+          item.classList.remove("active");
         }
       });
-      
+
       // Toggle current dropdown
-      navItem.classList.toggle('active');
+      navItem.classList.toggle("active");
     });
   });
-  
+
   // Close dropdowns when clicking outside
-  document.addEventListener('click', (e) => {
+  document.addEventListener("click", (e) => {
     if (!isMobile()) return;
-    
-    const clickedInside = e.target.closest('.nav-item');
+
+    const clickedInside = e.target.closest(".nav-item");
     if (!clickedInside) {
-      navItems.forEach(item => item.classList.remove('active'));
+      navItems.forEach((item) => item.classList.remove("active"));
     }
   });
-  
+
   // Close dropdowns when window resizes to desktop
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     if (!isMobile()) {
-      navItems.forEach(item => item.classList.remove('active'));
+      navItems.forEach((item) => item.classList.remove("active"));
     }
   });
 }

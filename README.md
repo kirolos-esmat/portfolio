@@ -8,6 +8,7 @@ A modern, responsive portfolio website showcasing my work as a DevOps Engineer a
 ## ✨ Features
 
 ### 🎨 Modern Design
+
 - **Glassmorphic UI** with backdrop blur effects
 - **Dark/Light theme** toggle with smooth transitions
 - **Responsive design** optimized for mobile, tablet, and desktop
@@ -15,6 +16,7 @@ A modern, responsive portfolio website showcasing my work as a DevOps Engineer a
 - **Modern hover effects** with soft glows and subtle lifts
 
 ### 📱 Mobile-First
+
 - **Touch-optimized** interactions with 44px minimum tap targets
 - **Vertical layouts** on mobile that adapt to horizontal on desktop
 - **Click-based dropdowns** for mobile, hover for desktop
@@ -22,6 +24,7 @@ A modern, responsive portfolio website showcasing my work as a DevOps Engineer a
 - **Floating avatar animation** across all devices
 
 ### 🎮 Interactive Elements
+
 - **Snake game** background (desktop only)
 - **Dynamic typewriter** effect for DevOps actions
 - **Animated skill badges** with hover states
@@ -29,6 +32,7 @@ A modern, responsive portfolio website showcasing my work as a DevOps Engineer a
 - **Copy email** functionality with toast notifications
 
 ### 🏗️ Technical Highlights
+
 - **Pure vanilla JavaScript** - no frameworks or dependencies
 - **CSS Variables** for consistent theming
 - **Mobile-first CSS** with three responsive breakpoints
@@ -56,37 +60,42 @@ app-main/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - A local web server (optional, but recommended)
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/portfolio.git
    cd portfolio
    ```
 
 2. **Open in browser**
-   
+
    **Option A: Direct file**
+
    ```bash
    open index.html
    # or just double-click index.html
    ```
 
    **Option B: Using Python (recommended)**
+
    ```bash
    # Python 3
    python -m http.server 8000
-   
+
    # Then visit http://localhost:8000
    ```
 
    **Option C: Using Node.js**
+
    ```bash
    npx http-server -p 8000
-   
+
    # Then visit http://localhost:8000
    ```
 
@@ -96,11 +105,11 @@ app-main/
 
 The website uses a mobile-first approach with three breakpoints:
 
-| Breakpoint | Screen Size | Layout |
-|------------|-------------|--------|
-| **Mobile** | < 768px | Vertical stacking, full-width buttons |
-| **Tablet** | 768px - 1023px | Semi-optimized layouts, mixed features |
-| **Desktop** | ≥ 1024px | Full effects, hover interactions |
+| Breakpoint  | Screen Size    | Layout                                 |
+| ----------- | -------------- | -------------------------------------- |
+| **Mobile**  | < 768px        | Vertical stacking, full-width buttons  |
+| **Tablet**  | 768px - 1023px | Semi-optimized layouts, mixed features |
+| **Desktop** | ≥ 1024px       | Full effects, hover interactions       |
 
 ## 🎨 Customization
 
@@ -139,22 +148,22 @@ Adjust animation parameters in `css/style.css`:
 
 ```css
 /* Speed up/slow down animations */
---transition: all 0.2s ease;  /* Change timing */
+--transition: all 0.2s ease; /* Change timing */
 
 /* Modify hover effects */
 .detail-card:hover {
-  transform: translateY(-8px) scale(1.005);  /* Adjust values */
+  transform: translateY(-8px) scale(1.005); /* Adjust values */
 }
 ```
 
 ## 🔧 Browser Support
 
-| Browser | Version |
-|---------|---------|
-| Chrome | ✅ Latest |
+| Browser | Version   |
+| ------- | --------- |
+| Chrome  | ✅ Latest |
 | Firefox | ✅ Latest |
-| Safari | ✅ 14+ |
-| Edge | ✅ Latest |
+| Safari  | ✅ 14+    |
+| Edge    | ✅ Latest |
 
 **Note**: The website uses modern CSS features like `backdrop-filter` and CSS Grid. Older browsers may have limited support.
 
@@ -165,16 +174,6 @@ Adjust animation parameters in `css/style.css`:
 - 📱 **Mobile-friendly**: Heavy effects disabled on small screens
 - 🚫 **No dependencies**: Zero external libraries
 
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## 📝 License
 
 This project is licensed under the **MIT License with Attribution Requirement**.
@@ -184,11 +183,13 @@ This project is licensed under the **MIT License with Attribution Requirement**.
 If you use, modify, or distribute this code, you **must** include attribution to:
 
 **Kirolos Esmat**
+
 - Portfolio: [kirolos-esmat.github.io/portfolio](https://kirolos-esmat.github.io/portfolio)
 - GitHub: [@kirolos-esmat](https://github.com/kirolos-esmat)
 - Email: kirolos.esmat10@gmail.com
 
 Attribution can be provided in:
+
 - Website footer
 - README or documentation
 - Source code comments
@@ -198,6 +199,7 @@ See the [LICENSE](LICENSE) file for full details.
 ## 📧 Contact
 
 **Kirolos Esmat**
+
 - Email: kirolos.esmat10@gmail.com
 - LinkedIn: [linkedin.com/in/kirolos-esmat](https://www.linkedin.com/in/kirolos-esmat/)
 - GitHub: [@kirolosesmat](https://github.com/yourusername)
