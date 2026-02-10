@@ -18,28 +18,53 @@
     <link href="https://fonts.cdnfonts.com/css/retropix" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
     <style>
+      /* ensure card is a positioning context */
+      .detail-card {
+        position: relative;
+      }
+
       .cert-link {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        margin: 12px 24px 20px;
-        padding: 8px 16px;
+        margin: 0;
+        padding: 8px 14px;
         background: rgba(59, 130, 246, 0.06);
         border: 1px solid rgba(59, 130, 246, 0.15);
-        border-radius: 8px;
+        border-radius: 999px;
         color: #3b82f6;
         font-size: 0.8rem;
         font-weight: 600;
         text-decoration: none;
-        transition: all 0.2s ease;
+        transition: all 0.18s ease;
+        position: absolute;
+        top: 24px;
+        right: 16px;
+        z-index: 6;
+        backdrop-filter: blur(4px);
       }
+
       @media (min-width: 481px) {
         .cert-link:hover {
           background: #3b82f6;
           color: #fff;
           border-color: #3b82f6;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(59, 130, 246, 0.08);
         }
       }
+
+      /* On small screens, keep the link inline under the card body */
+      @media (max-width: 480px) {
+        .cert-link {
+          position: static;
+          margin: 12px 24px 20px;
+          border-radius: 8px;
+          backdrop-filter: none;
+          box-shadow: none;
+        }
+      }
+
       .cert-link svg {
         width: 14px;
         height: 14px;
@@ -126,9 +151,7 @@
           </div>
           <div>
             <div class="card-title">DevOps Development Training</div>
-            <div class="card-subtitle">
-              STEM Entrepreneurship Center · Aug 2025
-            </div>
+            <div class="card-subtitle">STEM Entrepreneurship Center</div>
           </div>
         </div>
         <div class="card-body">
@@ -249,7 +272,7 @@
           </div>
           <div>
             <div class="card-title">Introduction to DevOps</div>
-            <div class="card-subtitle">Manara</div>
+            <div class="card-subtitle">Coursera</div>
           </div>
         </div>
         <div class="card-body">
@@ -307,7 +330,7 @@
           </div>
           <div>
             <div class="card-title">Introduction to Cloud Computing</div>
-            <div class="card-subtitle">Manara</div>
+            <div class="card-subtitle">Coursera</div>
           </div>
         </div>
         <div class="card-body">
@@ -487,7 +510,7 @@
           </div>
           <div>
             <div class="card-title">Notion from Scratch until Professional</div>
-            <div class="card-subtitle">Productivity & Project Management</div>
+            <div class="card-subtitle">Udemy</div>
           </div>
         </div>
         <div class="card-body">

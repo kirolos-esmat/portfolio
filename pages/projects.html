@@ -79,6 +79,72 @@
         onclick="window.location.href = '../Screw-landing-page/index.html'"
         style="cursor: pointer"
       >
+        <!-- Modern Live Badge with Animation -->
+        <style>
+          @keyframes pulse-live {
+            0% {
+              box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.5);
+            }
+            70% {
+              box-shadow: 0 0 0 8px rgba(39, 201, 63, 0);
+            }
+            100% {
+              box-shadow: 0 0 0 0 rgba(39, 201, 63, 0);
+            }
+          }
+        </style>
+        <div style="position: absolute; top: 18px; right: 18px; z-index: 2">
+          <span
+            style="
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              background: rgba(39, 201, 63, 0.12);
+              color: #27c93f;
+              font-size: 0.92em;
+              font-weight: 700;
+              border-radius: 18px;
+              padding: 4px 14px 4px 10px;
+              box-shadow: 0 2px 12px 0 rgba(39, 201, 63, 0.1);
+              letter-spacing: 0.5px;
+            "
+          >
+            <span
+              style="
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                position: relative;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 14px;
+                  height: 14px;
+                  border-radius: 50%;
+                  background: #27c93f;
+                  opacity: 0.3;
+                  animation: pulse-live 1.2s infinite;
+                "
+              ></span>
+              <span
+                style="
+                  position: absolute;
+                  top: 3px;
+                  left: 3px;
+                  width: 8px;
+                  height: 8px;
+                  border-radius: 50%;
+                  background: #27c93f;
+                "
+              ></span>
+            </span>
+            LIVE
+          </span>
+        </div>
         <div class="card-header">
           <div class="card-icon">
             <svg
@@ -157,7 +223,7 @@
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
-            Dec 2024 — Present
+            Dec 2024
           </span>
         </div>
         <div class="card-tags">
@@ -245,7 +311,7 @@
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
-            2024
+            2023
           </span>
         </div>
         <div class="card-tags">
