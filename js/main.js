@@ -400,6 +400,23 @@ let direction = { x: 1, y: 0 };
 let nextDirection = { x: 1, y: 0 };
 let gridCols, gridRows, maxXVal, maxYVal, centerCol, centerRow;
 
+// Score & HUD state
+let currentScore = 0;
+let highScore = 0;
+try {
+  highScore = parseInt(localStorage.getItem("snake_high_score") || "0", 10) || 0;
+} catch (e) {}
+
+const scoreEl = document.getElementById("snake-score");
+const bestEl = document.getElementById("snake-best");
+const hudEl = document.getElementById("snake-hud");
+
+function updateScoreDisplay() {
+  if (scoreEl) scoreEl.textContent = currentScore;
+  if (bestEl) bestEl.textContent = highScore;
+}
+if (canvas) updateScoreDisplay();
+
 function updateGridDimensions() {
   if (!canvas) return;
   canvas.width = window.innerWidth;
@@ -430,25 +447,39 @@ const snakeEnabled =
   !isSubPage &&
   window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
+let hasStartedPlaying = false;
 if (snakeEnabled) {
   document.addEventListener("keydown", (e) => {
+    let handled = false;
     switch (e.key) {
       case "ArrowUp":
-        if (direction.y !== 1) nextDirection = { x: 0, y: -1 };
-        e.preventDefault();
+        if (direction.y !== 1) {
+          nextDirection = { x: 0, y: -1 };
+          handled = true;
+        }
         break;
       case "ArrowDown":
-        if (direction.y !== -1) nextDirection = { x: 0, y: 1 };
-        e.preventDefault();
+        if (direction.y !== -1) {
+          nextDirection = { x: 0, y: 1 };
+          handled = true;
+        }
         break;
       case "ArrowLeft":
-        if (direction.x !== 1) nextDirection = { x: -1, y: 0 };
-        e.preventDefault();
+        if (direction.x !== 1) {
+          nextDirection = { x: -1, y: 0 };
+          handled = true;
+        }
         break;
       case "ArrowRight":
-        if (direction.x !== -1) nextDirection = { x: 1, y: 0 };
-        e.preventDefault();
+        if (direction.x !== -1) {
+          nextDirection = { x: 1, y: 0 };
+          handled = true;
+        }
         break;
+    }
+    if (handled) {
+      hasStartedPlaying = true;
+      e.preventDefault();
     }
   });
 }
@@ -476,6 +507,24 @@ function updateSnake() {
   if (newX < 0) newX = maxXVal;
   if (newY > maxYVal) newY = 0;
   if (newY < 0) newY = maxYVal;
+
+  // Check self collision when player is actively playing
+  if (hasStartedPlaying && snake.length > snakeLength) {
+    const hitSelf = snake.slice(1).some((seg) => seg.x === newX && seg.y === newY);
+    if (hitSelf) {
+      if (hudEl) {
+        hudEl.classList.remove("game-over");
+        void hudEl.offsetWidth;
+        hudEl.classList.add("game-over");
+      }
+      currentScore = 0;
+      updateScoreDisplay();
+      initSnake();
+      spawnFood();
+      return;
+    }
+  }
+
   snake.unshift({ x: newX, y: newY });
   snake.pop();
 }
@@ -515,6 +564,19 @@ function checkFoodCollision() {
   if (snake[0].x === food.x && snake[0].y === food.y) {
     const tail = snake[snake.length - 1];
     snake.push({ x: tail.x, y: tail.y });
+    currentScore++;
+    if (currentScore > highScore) {
+      highScore = currentScore;
+      try {
+        localStorage.setItem("snake_high_score", highScore.toString());
+      } catch (e) {}
+    }
+    updateScoreDisplay();
+    if (hudEl) {
+      hudEl.classList.remove("score-pop");
+      void hudEl.offsetWidth;
+      hudEl.classList.add("score-pop");
+    }
     spawnFood();
   }
 }
