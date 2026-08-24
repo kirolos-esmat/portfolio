@@ -1,16 +1,20 @@
 // ============ THEME ============
-(function initTheme() {
-  const saved = localStorage.getItem("theme");
-  if (saved) document.body.setAttribute("data-theme", saved);
-  else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-    document.body.setAttribute("data-theme", "dark");
-})();
+// Applied pre-paint by an inline script in <head>; this is a safety net.
+const rootEl = document.documentElement;
+if (!rootEl.hasAttribute("data-theme")) {
+  rootEl.setAttribute(
+    "data-theme",
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
+  );
+}
 
 function toggleTheme() {
   const next =
-    document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
-  document.body.setAttribute("data-theme", next);
-  localStorage.setItem("theme", next);
+    rootEl.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  rootEl.setAttribute("data-theme", next);
+  try {
+    localStorage.setItem("theme", next);
+  } catch (e) {}
   requestAnimationFrame(() => {
     if (window.themeChangeCallback) window.themeChangeCallback();
   });
@@ -21,13 +25,37 @@ function copyEmail(e) {
     e.preventDefault();
     e.stopPropagation();
   }
-  navigator.clipboard.writeText("kirolos.esmat10@gmail.com").then(() => {
-    const toast = document.getElementById("toast");
-    if (toast) {
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 2000);
-    }
-  });
+  const EMAIL = "kirolos.esmat10@gmail.com";
+  const toast = document.getElementById("toast");
+  const showToast = (msg) => {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2000);
+  };
+  const copyFallback = () => {
+    const ta = document.createElement("textarea");
+    ta.value = EMAIL;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (err) {}
+    document.body.removeChild(ta);
+    showToast(ok ? "Email copied!" : "Copy failed — " + EMAIL);
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(EMAIL).then(
+      () => showToast("Email copied!"),
+      copyFallback,
+    );
+  } else {
+    copyFallback();
+  }
 }
 
 // ============ TYPEWRITER (only on homepage) ============
@@ -213,229 +241,43 @@ const homeLines = [
 
 const subLines = [];
 
-const projectsLines = [
-  [
-    "flutter · dart · firebase · arcore",
-    "google-maps · real-time · tracking · parking",
-    "state-management · provider · bloc · riverpod",
-    "ui-design · material · animations · responsive",
-  ],
-  [
-    "graduation-project · A+ · cyber-park · ar",
-    "cross-platform · ios · android · web",
-    "score-tracker · rankings · history · stats",
-    "published · app-store · play-store · live",
-  ],
-  [
-    "flutter · dart · firebase · arcore",
-    "google-maps · real-time · tracking · parking",
-    "state-management · provider · bloc · riverpod",
-    "ui-design · material · animations · responsive",
-  ],
-  [
-    "graduation-project · A+ · cyber-park · ar",
-    "cross-platform · ios · android · web",
-    "score-tracker · rankings · history · stats",
-    "published · app-store · play-store · live",
-  ],
-  [
-    "flutter · dart · firebase · arcore",
-    "google-maps · real-time · tracking · parking",
-    "state-management · provider · bloc · riverpod",
-    "ui-design · material · animations · responsive",
-  ],
-  [
-    "graduation-project · A+ · cyber-park · ar",
-    "cross-platform · ios · android · web",
-    "score-tracker · rankings · history · stats",
-    "published · app-store · play-store · live",
-  ],
-  [
-    "flutter · dart · firebase · arcore",
-    "google-maps · real-time · tracking · parking",
-    "state-management · provider · bloc · riverpod",
-    "ui-design · material · animations · responsive",
-  ],
-  [
-    "graduation-project · A+ · cyber-park · ar",
-    "cross-platform · ios · android · web",
-    "score-tracker · rankings · history · stats",
-    "published · app-store · play-store · live",
-  ],
-  [
-    "flutter · dart · firebase · arcore",
-    "google-maps · real-time · tracking · parking",
-    "state-management · provider · bloc · riverpod",
-    "ui-design · material · animations · responsive",
-  ],
-  [
-    "graduation-project · A+ · cyber-park · ar",
-    "cross-platform · ios · android · web",
-    "score-tracker · rankings · history · stats",
-    "published · app-store · play-store · live",
-  ],
-  [
-    "flutter · dart · firebase · arcore",
-    "google-maps · real-time · tracking · parking",
-    "state-management · provider · bloc · riverpod",
-    "ui-design · material · animations · responsive",
-  ],
-  [
-    "graduation-project · A+ · cyber-park · ar",
-    "cross-platform · ios · android · web",
-    "score-tracker · rankings · history · stats",
-    "published · app-store · play-store · live",
-  ],
-  [
-    "flutter · dart · firebase · arcore",
-    "google-maps · real-time · tracking · parking",
-    "state-management · provider · bloc · riverpod",
-    "ui-design · material · animations · responsive",
-  ],
-  [
-    "graduation-project · A+ · cyber-park · ar",
-    "cross-platform · ios · android · web",
-    "score-tracker · rankings · history · stats",
-    "published · app-store · play-store · live",
-  ],
-  [
-    "flutter · dart · firebase · arcore",
-    "google-maps · real-time · tracking · parking",
-    "state-management · provider · bloc · riverpod",
-    "ui-design · material · animations · responsive",
-  ],
-  [
-    "graduation-project · A+ · cyber-park · ar",
-    "cross-platform · ios · android · web",
-    "score-tracker · rankings · history · stats",
-    "published · app-store · play-store · live",
-  ],
-  [
-    "flutter · dart · firebase · arcore",
-    "google-maps · real-time · tracking · parking",
-    "state-management · provider · bloc · riverpod",
-    "ui-design · material · animations · responsive",
-  ],
-  [
-    "graduation-project · A+ · cyber-park · ar",
-    "cross-platform · ios · android · web",
-    "score-tracker · rankings · history · stats",
-    "published · app-store · play-store · live",
-  ],
-];
+// Repeat a small set of marquee rows so the background stays varied
+// without hand-duplicating data.
+function buildRows(base, count) {
+  return Array.from({ length: count }, (_, i) => base[i % base.length]);
+}
 
-const experienceLines = [
+const projectsLines = buildRows([
   [
-    "founder · developer · leader · creator",
-    "hedwig-devs · skrew · mobile · apps",
-    "server-admin · linux · docker · truenas",
-    "nashat-metry · alexandria · infrastructure",
+    "flutter · dart · firebase · arcore",
+    "google-maps · real-time · tracking · parking",
+    "state-management · provider · bloc · riverpod",
+    "ui-design · material · animations · responsive",
   ],
   [
-    "robonation · web-dev · html · css · js",
-    "hosting · domains · performance · florida",
-    "devops · ci-cd · deploy · automate",
-    "collaborate · communicate · deliver · grow",
+    "graduation-project · A+ · cyber-park · ar",
+    "cross-platform · ios · android · web",
+    "score-tracker · rankings · history · stats",
+    "published · app-store · play-store · live",
   ],
-  [
-    "founder · developer · leader · creator",
-    "hedwig-devs · skrew · mobile · apps",
-    "server-admin · linux · docker · truenas",
-    "nashat-metry · alexandria · infrastructure",
-  ],
-  [
-    "robonation · web-dev · html · css · js",
-    "hosting · domains · performance · florida",
-    "devops · ci-cd · deploy · automate",
-    "collaborate · communicate · deliver · grow",
-  ],
-  [
-    "founder · developer · leader · creator",
-    "hedwig-devs · skrew · mobile · apps",
-    "server-admin · linux · docker · truenas",
-    "nashat-metry · alexandria · infrastructure",
-  ],
-  [
-    "robonation · web-dev · html · css · js",
-    "hosting · domains · performance · florida",
-    "devops · ci-cd · deploy · automate",
-    "collaborate · communicate · deliver · grow",
-  ],
-  [
-    "founder · developer · leader · creator",
-    "hedwig-devs · skrew · mobile · apps",
-    "server-admin · linux · docker · truenas",
-    "nashat-metry · alexandria · infrastructure",
-  ],
-  [
-    "robonation · web-dev · html · css · js",
-    "hosting · domains · performance · florida",
-    "devops · ci-cd · deploy · automate",
-    "collaborate · communicate · deliver · grow",
-  ],
-  [
-    "founder · developer · leader · creator",
-    "hedwig-devs · skrew · mobile · apps",
-    "server-admin · linux · docker · truenas",
-    "nashat-metry · alexandria · infrastructure",
-  ],
-  [
-    "robonation · web-dev · html · css · js",
-    "hosting · domains · performance · florida",
-    "devops · ci-cd · deploy · automate",
-    "collaborate · communicate · deliver · grow",
-  ],
-  [
-    "founder · developer · leader · creator",
-    "hedwig-devs · skrew · mobile · apps",
-    "server-admin · linux · docker · truenas",
-    "nashat-metry · alexandria · infrastructure",
-  ],
-  [
-    "robonation · web-dev · html · css · js",
-    "hosting · domains · performance · florida",
-    "devops · ci-cd · deploy · automate",
-    "collaborate · communicate · deliver · grow",
-  ],
-  [
-    "founder · developer · leader · creator",
-    "hedwig-devs · skrew · mobile · apps",
-    "server-admin · linux · docker · truenas",
-    "nashat-metry · alexandria · infrastructure",
-  ],
-  [
-    "robonation · web-dev · html · css · js",
-    "hosting · domains · performance · florida",
-    "devops · ci-cd · deploy · automate",
-    "collaborate · communicate · deliver · grow",
-  ],
-  [
-    "founder · developer · leader · creator",
-    "hedwig-devs · skrew · mobile · apps",
-    "server-admin · linux · docker · truenas",
-    "nashat-metry · alexandria · infrastructure",
-  ],
-  [
-    "robonation · web-dev · html · css · js",
-    "hosting · domains · performance · florida",
-    "devops · ci-cd · deploy · automate",
-    "collaborate · communicate · deliver · grow",
-  ],
-  [
-    "founder · developer · leader · creator",
-    "hedwig-devs · skrew · mobile · apps",
-    "server-admin · linux · docker · truenas",
-    "nashat-metry · alexandria · infrastructure",
-  ],
-  [
-    "robonation · web-dev · html · css · js",
-    "hosting · domains · performance · florida",
-    "devops · ci-cd · deploy · automate",
-    "collaborate · communicate · deliver · grow",
-  ],
-];
+], 18);
 
-const skillsLines = [
+const experienceLines = buildRows([
+  [
+    "founder · developer · leader · creator",
+    "hedwig-devs · skrew · mobile · apps",
+    "server-admin · linux · docker · truenas",
+    "nashat-metry · alexandria · infrastructure",
+  ],
+  [
+    "robonation · web-dev · html · css · js",
+    "hosting · domains · performance · florida",
+    "devops · ci-cd · deploy · automate",
+    "collaborate · communicate · deliver · grow",
+  ],
+], 16);
+
+const skillsLines = buildRows([
   [
     "aws · docker · kubernetes · terraform",
     "jenkins · github-actions · ansible · bash",
@@ -472,81 +314,9 @@ const skillsLines = [
     "truenas · virtualization · storage · backup",
     "ssh · tunneling · keys · permissions",
   ],
-  [
-    "aws · docker · kubernetes · terraform",
-    "jenkins · github-actions · ansible · bash",
-    "grafana · prometheus · nginx · linux",
-    "flutter · dart · firebase · python",
-  ],
-  [
-    "deploy · ship · scale · automate",
-    "containerize · orchestrate · monitor · build",
-    "provision · configure · secure · optimize",
-    "commit · push · merge · release",
-  ],
-  [
-    "ec2 · s3 · lambda · rds",
-    "docker-compose · helm · k8s · swarm",
-    "ssl · dns · load-balancing · cdn",
-    "git · version-control · branching · workflows",
-  ],
-  [
-    "cloud-native · microservices · serverless · iac",
-    "ci/cd · pipelines · automation · devops",
-    "containers · pods · clusters · nodes",
-    "vpc · subnets · security-groups · iam",
-  ],
-  [
-    "linux · ubuntu · centos · shell",
-    "nginx · apache · reverse-proxy · caching",
-    "mysql · firebase-db · nosql · schemas",
-    "python · java · dart · javascript",
-  ],
-  [
-    "monitoring · alerting · logging · tracing",
-    "uptime · sla · reliability · resilience",
-    "truenas · virtualization · storage · backup",
-    "ssh · tunneling · keys · permissions",
-  ],
-  [
-    "aws · docker · kubernetes · terraform",
-    "jenkins · github-actions · ansible · bash",
-    "grafana · prometheus · nginx · linux",
-    "flutter · dart · firebase · python",
-  ],
-  [
-    "deploy · ship · scale · automate",
-    "containerize · orchestrate · monitor · build",
-    "provision · configure · secure · optimize",
-    "commit · push · merge · release",
-  ],
-  [
-    "ec2 · s3 · lambda · rds",
-    "docker-compose · helm · k8s · swarm",
-    "ssl · dns · load-balancing · cdn",
-    "git · version-control · branching · workflows",
-  ],
-  [
-    "cloud-native · microservices · serverless · iac",
-    "ci/cd · pipelines · automation · devops",
-    "containers · pods · clusters · nodes",
-    "vpc · subnets · security-groups · iam",
-  ],
-  [
-    "linux · ubuntu · centos · shell",
-    "nginx · apache · reverse-proxy · caching",
-    "mysql · firebase-db · nosql · schemas",
-    "python · java · dart · javascript",
-  ],
-  [
-    "monitoring · alerting · logging · tracing",
-    "uptime · sla · reliability · resilience",
-    "truenas · virtualization · storage · backup",
-    "ssh · tunneling · keys · permissions",
-  ],
-];
+], 18);
 
-const certsLines = [
+const certsLines = buildRows([
   [
     "aws-academy · cloud-foundations · graduate",
     "manara · devops · cloud-computing · intro",
@@ -559,103 +329,7 @@ const certsLines = [
     "cloud · devops · ai · leadership",
     "problem-solving · communication · adaptability",
   ],
-  [
-    "aws-academy · cloud-foundations · graduate",
-    "manara · devops · cloud-computing · intro",
-    "alx · aice · ai · career-essentials",
-    "mckinsey · forward · professional · growth",
-  ],
-  [
-    "notion · productivity · project-management",
-    "learning · growth · development · progress",
-    "cloud · devops · ai · leadership",
-    "problem-solving · communication · adaptability",
-  ],
-  [
-    "aws-academy · cloud-foundations · graduate",
-    "manara · devops · cloud-computing · intro",
-    "alx · aice · ai · career-essentials",
-    "mckinsey · forward · professional · growth",
-  ],
-  [
-    "notion · productivity · project-management",
-    "learning · growth · development · progress",
-    "cloud · devops · ai · leadership",
-    "problem-solving · communication · adaptability",
-  ],
-  [
-    "aws-academy · cloud-foundations · graduate",
-    "manara · devops · cloud-computing · intro",
-    "alx · aice · ai · career-essentials",
-    "mckinsey · forward · professional · growth",
-  ],
-  [
-    "notion · productivity · project-management",
-    "learning · growth · development · progress",
-    "cloud · devops · ai · leadership",
-    "problem-solving · communication · adaptability",
-  ],
-  [
-    "aws-academy · cloud-foundations · graduate",
-    "manara · devops · cloud-computing · intro",
-    "alx · aice · ai · career-essentials",
-    "mckinsey · forward · professional · growth",
-  ],
-  [
-    "notion · productivity · project-management",
-    "learning · growth · development · progress",
-    "cloud · devops · ai · leadership",
-    "problem-solving · communication · adaptability",
-  ],
-  [
-    "aws-academy · cloud-foundations · graduate",
-    "manara · devops · cloud-computing · intro",
-    "alx · aice · ai · career-essentials",
-    "mckinsey · forward · professional · growth",
-  ],
-  [
-    "notion · productivity · project-management",
-    "learning · growth · development · progress",
-    "cloud · devops · ai · leadership",
-    "problem-solving · communication · adaptability",
-  ],
-  [
-    "aws-academy · cloud-foundations · graduate",
-    "manara · devops · cloud-computing · intro",
-    "alx · aice · ai · career-essentials",
-    "mckinsey · forward · professional · growth",
-  ],
-  [
-    "notion · productivity · project-management",
-    "learning · growth · development · progress",
-    "cloud · devops · ai · leadership",
-    "problem-solving · communication · adaptability",
-  ],
-  [
-    "aws-academy · cloud-foundations · graduate",
-    "manara · devops · cloud-computing · intro",
-    "alx · aice · ai · career-essentials",
-    "mckinsey · forward · professional · growth",
-  ],
-  [
-    "notion · productivity · project-management",
-    "learning · growth · development · progress",
-    "cloud · devops · ai · leadership",
-    "problem-solving · communication · adaptability",
-  ],
-  [
-    "aws-academy · cloud-foundations · graduate",
-    "manara · devops · cloud-computing · intro",
-    "alx · aice · ai · career-essentials",
-    "mckinsey · forward · professional · growth",
-  ],
-  [
-    "notion · productivity · project-management",
-    "learning · growth · development · progress",
-    "cloud · devops · ai · leadership",
-    "problem-solving · communication · adaptability",
-  ],
-];
+], 18);
 
 // Detect page from filename
 function getPageLines() {
@@ -681,9 +355,8 @@ function wrapChars(text) {
     .join("");
 }
 
-// ...existing code...
-
 function initBackgroundText() {
+  if (isSubPage) return;
   const testimonialsBg = document.getElementById("testimonials-bg");
   if (!testimonialsBg) return;
   skillLines.forEach((row, rowIndex) => {
@@ -752,26 +425,33 @@ function initSnake() {
 }
 if (canvas) initSnake();
 
-document.addEventListener("keydown", (e) => {
-  switch (e.key) {
-    case "ArrowUp":
-      if (direction.y !== 1) nextDirection = { x: 0, y: -1 };
-      e.preventDefault();
-      break;
-    case "ArrowDown":
-      if (direction.y !== -1) nextDirection = { x: 0, y: 1 };
-      e.preventDefault();
-      break;
-    case "ArrowLeft":
-      if (direction.x !== 1) nextDirection = { x: -1, y: 0 };
-      e.preventDefault();
-      break;
-    case "ArrowRight":
-      if (direction.x !== -1) nextDirection = { x: 1, y: 0 };
-      e.preventDefault();
-      break;
-  }
-});
+const snakeEnabled =
+  !!canvas &&
+  !isSubPage &&
+  window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+if (snakeEnabled) {
+  document.addEventListener("keydown", (e) => {
+    switch (e.key) {
+      case "ArrowUp":
+        if (direction.y !== 1) nextDirection = { x: 0, y: -1 };
+        e.preventDefault();
+        break;
+      case "ArrowDown":
+        if (direction.y !== -1) nextDirection = { x: 0, y: 1 };
+        e.preventDefault();
+        break;
+      case "ArrowLeft":
+        if (direction.x !== 1) nextDirection = { x: -1, y: 0 };
+        e.preventDefault();
+        break;
+      case "ArrowRight":
+        if (direction.x !== -1) nextDirection = { x: 1, y: 0 };
+        e.preventDefault();
+        break;
+    }
+  });
+}
 
 let cachedSnakeColor = null;
 function getSnakeColor() {
@@ -838,7 +518,7 @@ function checkFoodCollision() {
     spawnFood();
   }
 }
-if (canvas) setTimeout(spawnFood, 500);
+if (snakeEnabled) setTimeout(spawnFood, 500);
 
 let foodPulse = 0;
 function drawSnake(timestamp) {
@@ -1137,7 +817,7 @@ function initMobileDropdowns() {
 
 // Initialize mobile dropdowns
 initMobileDropdowns();
-if (canvas) setTimeout(() => requestAnimationFrame(gameLoop), 100);
+if (snakeEnabled) setTimeout(() => requestAnimationFrame(gameLoop), 100);
 
 let resizeTimeout = null;
 window.addEventListener("resize", () => {

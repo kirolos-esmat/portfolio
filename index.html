@@ -10,6 +10,7 @@
     />
     <meta name="author" content="Kirolos Esmat" />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kirolos-esmat.github.io/portfolio/" />
     <meta
       property="og:title"
       content="Kirolos Esmat — DevOps Engineer & Mobile Developer"
@@ -19,6 +20,50 @@
       content="Computer Science graduate with experience in DevOps, cloud infrastructure, and Flutter mobile development."
     />
     <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://kirolos-esmat.github.io/portfolio/"
+    />
+    <meta property="og:site_name" content="Kirolos Esmat" />
+    <meta
+      property="og:image"
+      content="https://kirolos-esmat.github.io/portfolio/images/og-image.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Kirolos Esmat — DevOps Engineer & Mobile Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Computer Science graduate with experience in DevOps, cloud infrastructure, and Flutter mobile development."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kirolos-esmat.github.io/portfolio/images/og-image.png"
+    />
+    <meta
+      name="theme-color"
+      content="#fafafa"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0f0f0f"
+      media="(prefers-color-scheme: dark)"
+    />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (!t)
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/png" href="images/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,65 +72,17 @@
       rel="stylesheet"
     />
     <link href="https://fonts.cdnfonts.com/css/retropix" rel="stylesheet" />
-    <link
-      rel="preload"
-      as="font"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      crossorigin
-    />
     <link rel="preload" as="image" href="images/logo.png" />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      /* Projects live badge */
-      .nav-button {
-        position: relative;
-      }
-      @keyframes pulseNavLive {
-        0% {
-          box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.35);
-        }
-        70% {
-          box-shadow: 0 0 0 8px rgba(39, 201, 63, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(39, 201, 63, 0);
-        }
-      }
-      .nav-button .dot::after {
-        /* keep pulse keyframes available for dropdown dots */
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        animation: pulseNavLive 1.6s infinite;
-        opacity: 0.9;
-      }
-      /* live dot */
-      .live-dot {
-        width: 8px;
-        height: 8px;
-        background: #27c93f;
-        border-radius: 50%;
-        flex-shrink: 0;
-        margin-left: auto;
-        box-shadow: 0 0 8px rgba(39, 201, 63, 0.6);
-        animation: liveDotBlink 1.5s ease-in-out infinite;
-      }
-      @keyframes liveDotBlink {
-        0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(39, 201, 63, 0.6); }
-        50% { opacity: 0.4; box-shadow: 0 0 4px rgba(39, 201, 63, 0.3); }
-      }
-    </style>
   </head>
-  <body class="page-home" data-theme="light">
-    <div
+  <body class="page-home">
+    <button
+      type="button"
       class="theme-toggle"
       onclick="toggleTheme()"
-      role="button"
       aria-label="Toggle dark mode"
-      tabindex="0"
     >
-      <div class="theme-toggle-circle">
+      <span class="theme-toggle-circle">
         <svg
           class="theme-toggle-sun"
           viewBox="0 0 24 24"
@@ -110,8 +107,8 @@
         >
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
-      </div>
-    </div>
+      </span>
+    </button>
 
     <div class="container">
       <!-- ======== HERO ======== -->
@@ -550,26 +547,6 @@
       <div class="divider"></div>
       <div class="contact-row">
         <a
-          href="assets/Kirolos_Esmat_CV.pdf"
-          download
-          class="contact-btn primary"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-          Download CV
-          <span class="cv-badge">PDF</span>
-        </a>
-        <a
           href="https://github.com/kirolos-esmat"
           target="_blank"
           rel="noopener noreferrer"
@@ -629,7 +606,7 @@
 
       <div class="footer-info">
         <p class="footer-text">
-          <a href="pages/terminal.html" style="color:var(--text-muted);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.7rem;opacity:0.6;transition:opacity 0.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">&gt;_ Terminal</a>
+          <a href="pages/terminal.html" class="terminal-link">&gt;_ Terminal</a>
         </p>
         <p class="footer-text">
           &copy; 2026 Kirolos Esmat. All rights reserved.

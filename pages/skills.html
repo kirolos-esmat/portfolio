@@ -8,6 +8,39 @@
       name="description"
       content="Technical skills of Kirolos Esmat — Cloud, DevOps, CI/CD, Mobile, Web development."
     />
+    <link rel="canonical" href="https://kirolos-esmat.github.io/portfolio/pages/skills.html" />
+    <meta property="og:title" content="Skills — Kirolos Esmat" />
+    <meta property="og:description" content="Technical skills of Kirolos Esmat — AWS, Docker, Kubernetes, Terraform, CI/CD, Flutter." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kirolos-esmat.github.io/portfolio/pages/skills.html" />
+    <meta property="og:site_name" content="Kirolos Esmat" />
+    <meta property="og:image" content="https://kirolos-esmat.github.io/portfolio/images/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Skills — Kirolos Esmat" />
+    <meta name="twitter:description" content="Technical skills of Kirolos Esmat — AWS, Docker, Kubernetes, Terraform, CI/CD, Flutter." />
+    <meta name="twitter:image" content="https://kirolos-esmat.github.io/portfolio/images/og-image.png" />
+    <meta
+      name="theme-color"
+      content="#fafafa"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0f0f0f"
+      media="(prefers-color-scheme: dark)"
+    />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (!t)
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/png" href="../images/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +51,7 @@
     <link href="https://fonts.cdnfonts.com/css/retropix" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body class="page-sub" data-theme="light">
+  <body class="page-sub">
     <a href="../index.html" class="back-nav">
       <svg
         viewBox="0 0 24 24"
@@ -32,14 +65,13 @@
       Home
     </a>
 
-    <div
+    <button
+      type="button"
       class="theme-toggle"
       onclick="toggleTheme()"
-      role="button"
       aria-label="Toggle dark mode"
-      tabindex="0"
     >
-      <div class="theme-toggle-circle">
+      <span class="theme-toggle-circle">
         <svg
           class="theme-toggle-sun"
           viewBox="0 0 24 24"
@@ -64,8 +96,8 @@
         >
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
-      </div>
-    </div>
+      </span>
+    </button>
 
     <div class="sub-container">
       <div class="page-header-box">
