@@ -573,6 +573,9 @@ function checkFoodCollision() {
     }
     updateScoreDisplay();
     if (hudEl) {
+      if (!hudEl.classList.contains("show")) {
+        hudEl.classList.add("show");
+      }
       hudEl.classList.remove("score-pop");
       void hudEl.offsetWidth;
       hudEl.classList.add("score-pop");
