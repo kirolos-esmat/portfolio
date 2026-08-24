@@ -42,19 +42,23 @@ A modern, responsive portfolio website showcasing my work as a DevOps Engineer a
 ## 🗂️ Project Structure
 
 ```
-app-main/
-├── index.html              # Homepage
+portfolio/
+├── index.html               # Homepage
 ├── css/
-│   └── style.css          # Main stylesheet (mobile-first)
+│   └── style.css            # Main stylesheet (mobile-first)
 ├── js/
-│   └── main.js            # Core JavaScript functions
-├── images/                # Image assets
+│   ├── main.js              # Core JavaScript (theme, snake game, background)
+│   └── terminal.js          # Interactive terminal logic
+├── images/                  # Image assets (logo, og-image)
 ├── pages/
-│   ├── projects.html      # Projects showcase
-│   ├── experience.html    # Work experience timeline
-│   ├── skills.html        # Technical skills
-│   └── certificates.html  # Certifications
-└── Screw-landing-page/    # Featured project landing page
+│   ├── projects.html        # Projects showcase
+│   ├── experience.html      # Work experience timeline
+│   ├── skills.html          # Technical skills
+│   ├── certificates.html    # Certifications
+│   └── terminal.html        # Interactive terminal easter egg
+├── Screw-landing-page/      # Featured project landing page
+├── robots.txt               # Crawler rules
+└── sitemap.xml              # Search engine sitemap
 ```
 
 ## 🚀 Quick Start
@@ -169,9 +173,10 @@ Adjust animation parameters in `css/style.css`:
 
 ## 📊 Performance
 
-- ⚡ **Lightweight**: ~30KB total CSS/JS (unminified)
+- ⚡ **Lightweight**: ~84KB total CSS/JS (unminified, zero dependencies)
 - 🎯 **Optimized animations**: Uses GPU-accelerated transforms
-- 📱 **Mobile-friendly**: Heavy effects disabled on small screens
+- 📱 **Mobile-friendly**: Heavy effects (snake game, background text) disabled on small screens and subpages
+- 🌓 **No flash**: Theme is applied before first paint
 - 🚫 **No dependencies**: Zero external libraries
 
 ## 📝 License
@@ -202,7 +207,23 @@ See the [LICENSE](LICENSE) file for full details.
 
 - Email: kirolos.esmat10@gmail.com
 - LinkedIn: [linkedin.com/in/kirolos-esmat](https://www.linkedin.com/in/kirolos-esmat/)
-- GitHub: [@kirolosesmat](https://github.com/yourusername)
+- GitHub: [@kirolosesmat](https://github.com/kirolosesmat)
+
+## 📝 Changelog
+
+### v3
+
+- Fixed dark-mode flash — theme now applies before first paint
+- Theme toggle is now a real `<button>` (keyboard accessible)
+- Copy-email works on non-HTTPS with fallback + failure feedback
+- Snake game & background text disabled on subpages and touch devices
+- Deduplicated background marquee data (~330 lines removed from main.js)
+- Added SEO: canonical URLs, Open Graph/Twitter cards, og-image, robots.txt, sitemap.xml
+- Removed broken Download CV button (returning in a future release)
+
+### v2
+
+- Mobile optimization, tablet support, terminal page, live badge redesign
 
 ## 🙏 Acknowledgment
 

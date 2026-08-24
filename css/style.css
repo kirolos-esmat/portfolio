@@ -76,8 +76,6 @@
   --snake-color: #fafafa;
 }
 
-/* ...existing code... */
-
 /* ========== BASE ========== */
 html {
   scroll-behavior: smooth;
@@ -159,6 +157,13 @@ a {
 }
 
 /* ========== THEME TOGGLE ========== */
+button.theme-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  color: inherit;
+}
+
 .theme-toggle {
   position: fixed;
   top: 16px;
@@ -240,6 +245,17 @@ a {
 }
 [data-theme="dark"] .theme-toggle-moon {
   display: block;
+}
+
+/* ========== FOCUS STATES (keyboard) ========== */
+.theme-toggle:focus-visible,
+.back-nav:focus-visible,
+.nav-button:focus-visible,
+.contact-btn:focus-visible,
+.dropdown-item:focus-visible,
+.skill-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ========== BACK BUTTON (Subpages) ========== */
@@ -1029,6 +1045,62 @@ h1 {
 }
 .footer-text a:hover {
   color: var(--text-primary);
+}
+
+/* Terminal link in footer */
+.footer-text .terminal-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.footer-text .terminal-link:hover {
+  opacity: 1;
+}
+
+/* ========== PROJECTS LIVE BADGE (nav) ========== */
+@keyframes pulseNavLive {
+  0% {
+    box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.35);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(39, 201, 63, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(39, 201, 63, 0);
+  }
+}
+.nav-button .dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: pulseNavLive 1.6s infinite;
+  opacity: 0.9;
+}
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #27c93f;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: auto;
+  box-shadow: 0 0 8px rgba(39, 201, 63, 0.6);
+  animation: liveDotBlink 1.5s ease-in-out infinite;
+}
+@keyframes liveDotBlink {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(39, 201, 63, 0.6);
+  }
+  50% {
+    opacity: 0.4;
+    box-shadow: 0 0 4px rgba(39, 201, 63, 0.3);
+  }
 }
 
 
