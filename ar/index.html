@@ -1,30 +1,52 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kirolos Esmat - DevOps Engineer & Mobile Developer</title>
+    <title>كيرلس عصمت — مهندس DevOps ومطور تطبيقات جوال</title>
     <meta
       name="description"
-      content="Kirolos Esmat — DevOps Engineer and Mobile Developer specializing in AWS, Docker, Kubernetes, CI/CD, and Flutter. Based in Alexandria, Egypt."
+      content="كيرلس عصمت — مهندس DevOps ومطور تطبيقات جوال متخصص في AWS وDocker وKubernetes وCI/CD وFlutter. من الإسكندرية، مصر."
     />
     <meta name="author" content="Kirolos Esmat" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://kirolos-esmat.github.io/portfolio/" />
-    <meta
-      property="og:title"
-      content="Kirolos Esmat — DevOps Engineer & Mobile Developer"
+    <link
+      rel="canonical"
+      href="https://kirolos-esmat.github.io/portfolio/ar/"
     />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://kirolos-esmat.github.io/portfolio/"
+    />
+    <link
+      rel="alternate"
+      hreflang="ar"
+      href="https://kirolos-esmat.github.io/portfolio/ar/"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://kirolos-esmat.github.io/portfolio/"
+    />
+    <script>
+      (function () {
+        try {
+          localStorage.setItem("lang", "ar");
+        } catch (e) {}
+      })();
+    </script>
+    <meta property="og:title" content="كيرلس عصمت — مهندس DevOps ومطور تطبيقات جوال" />
     <meta
       property="og:description"
-      content="Computer Science graduate with experience in DevOps, cloud infrastructure, and Flutter mobile development."
+      content="خريج علوم حاسب بخبرة في DevOps والبنية التحتية السحابية وتطوير تطبيقات Flutter."
     />
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://kirolos-esmat.github.io/portfolio/"
+      content="https://kirolos-esmat.github.io/portfolio/ar/"
     />
-    <meta property="og:site_name" content="Kirolos Esmat" />
+    <meta property="og:site_name" content="كيرلس عصمت" />
     <meta
       property="og:image"
       content="https://kirolos-esmat.github.io/portfolio/images/og-image.png"
@@ -32,11 +54,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Kirolos Esmat — DevOps Engineer & Mobile Developer"
+      content="كيرلس عصمت — مهندس DevOps ومطور تطبيقات جوال"
     />
     <meta
       name="twitter:description"
-      content="Computer Science graduate with experience in DevOps, cloud infrastructure, and Flutter mobile development."
+      content="خريج علوم حاسب بخبرة في DevOps والبنية التحتية السحابية وتطوير تطبيقات Flutter."
     />
     <meta
       name="twitter:image"
@@ -64,49 +86,31 @@
         } catch (e) {}
       })();
     </script>
-    <link rel="alternate" hreflang="en" href="https://kirolos-esmat.github.io/portfolio/" />
-    <link
-      rel="alternate"
-      hreflang="ar"
-      href="https://kirolos-esmat.github.io/portfolio/ar/"
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://kirolos-esmat.github.io/portfolio/"
-    />
-    <script>
-      (function () {
-        try {
-          localStorage.setItem("lang", "en");
-        } catch (e) {}
-      })();
-    </script>
-    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link href="https://fonts.cdnfonts.com/css/retropix" rel="stylesheet" />
-    <link rel="preload" as="image" href="images/logo.png" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preload" as="image" href="../images/logo.png" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="page-home">
     <a
-      href="ar/index.html"
+      href="../index.html"
       class="lang-toggle"
-      lang="ar"
-      onclick="try{localStorage.setItem('lang','ar')}catch(e){}"
-      aria-label="Switch to Arabic version"
-      >عربي</a
+      lang="en"
+      onclick="try{localStorage.setItem('lang','en')}catch(e){}"
+      aria-label="التبديل إلى النسخة الإنجليزية"
+      >English</a
     >
     <button
       type="button"
       class="theme-toggle"
       onclick="toggleTheme()"
-      aria-label="Toggle dark mode"
+      aria-label="تبديل الوضع الليلي"
     >
       <span class="theme-toggle-circle">
         <svg
@@ -141,25 +145,26 @@
       <header>
         <div class="avatar">
           <img
-            src="images/logo.png"
-            alt="Kirolos Esmat"
+            src="../images/logo.png"
+            alt="كيرلس عصمت"
             class="avatar-img"
             loading="lazy"
           />
         </div>
-        <h1>Kirolos Esmat</h1>
+        <h1>كيرلس عصمت</h1>
         <p class="hero-statement">
-          <span class="static">I</span>
+          <span class="static">أنا</span>
           <span class="typing-wrapper">
             <span class="typing-text" id="typing-text"></span
             ><span class="cursor"></span>
           </span>
-          <span class="static">systems</span>
+          <span class="static">الأنظمة</span>
         </p>
         <p class="bio">
-          A passionate DevOps, Cloud, and Mobile Developer. CS Graduate from
-          AASTMT University. Experienced in microservices, AWS, IaC, and CI/CD
-          with Jenkins. Building scalable solutions through automation.
+          مهندس شغوف بـ DevOps والحوسبة السحابية وتطبيقات الجوال، خريج علوم
+          الحاسب من AASTMT. خبرة عملية في معمارية الخدمات المصغرة
+          (Microservices) وAWS والبنية التحتية كبرمجيات (IaC) وCI/CD مع
+          Jenkins. أبني حلولاً تقنية مرنة وقابلة للتوسع عبر الأتمتة.
         </p>
         <div class="tech-badges">
           <span class="badge"
@@ -200,7 +205,7 @@
             >
               <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
               <line x1="12" y1="22" x2="12" y2="15.5" />
-              <polyline points="22 8.5 12 15.5 2 8.5" />
+              <polyline points="22 8.5 12 15.5 2 8.5 12 2" />
             </svg>
             Kubernetes</span
           >
@@ -213,7 +218,7 @@
             Flutter</span
           >
           <span class="badge"
-            ><span class="status-dot"></span> Open to Work</span
+            ><span class="status-dot"></span> متاح للعمل</span
           >
         </div>
       </header>
@@ -235,11 +240,11 @@
               <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
               <line x1="12" y1="18" x2="12.01" y2="18" />
             </svg>
-            Projects
+            المشاريع
             <span class="nav-badge">2</span>
           </a>
           <div class="dropdown">
-            <a href="Screw-landing-page/index.html" class="dropdown-item">
+            <a href="../Screw-landing-page/index.html" class="dropdown-item">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -256,7 +261,7 @@
               </svg>
               <span class="item-text">
                 <strong>Skrew Calculator</strong>
-                <small>Card game score tracker</small>
+                <small>عداد نقاط لعبة الورق</small>
               </span>
               <span class="live-dot" aria-hidden="true"></span>
             </a>
@@ -276,7 +281,7 @@
               </svg>
               <span class="item-text">
                 <strong>Cyber Park</strong>
-                <small>AR Smart Parking · A+ Grade</small>
+                <small>مواقف ذكية بالواقع المعزز · تقدير <span dir="ltr">A+</span></small>
               </span>
             </a>
             <a href="pages/projects.html" class="dropdown-item dropdown-more">
@@ -290,7 +295,7 @@
                 <polyline points="9 18 15 12 9 6" />
               </svg>
               <span class="item-text">
-                <strong>View all projects</strong>
+                <strong>عرض جميع المشاريع</strong>
               </span>
             </a>
           </div>
@@ -309,7 +314,7 @@
               <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
             </svg>
-            Experience
+            الخبرة العملية
             <span class="nav-badge">3</span>
           </a>
           <div class="dropdown">
@@ -326,8 +331,8 @@
                 />
               </svg>
               <span class="item-text">
-                <strong>Founder & Developer</strong>
-                <small>Hedwig Devs · Dec 2024 — Present</small>
+                <strong>مؤسس ومطوّر</strong>
+                <small>Hedwig Devs · ديسمبر 2024 — الآن</small>
               </span>
             </a>
             <a href="pages/experience.html" class="dropdown-item">
@@ -343,8 +348,8 @@
                 <line x1="12" y1="17" x2="12" y2="21" />
               </svg>
               <span class="item-text">
-                <strong>Server Administrator</strong>
-                <small>Nashat Metry · Jan — Mar 2024</small>
+                <strong>مدير خوادم</strong>
+                <small>نشأت متري · يناير — مارس 2024</small>
               </span>
             </a>
             <a href="pages/experience.html" class="dropdown-item">
@@ -362,8 +367,8 @@
                 />
               </svg>
               <span class="item-text">
-                <strong>Web Developer</strong>
-                <small>RoboNation · Jan — Mar 2023</small>
+                <strong>مطوّر ويب</strong>
+                <small>RoboNation · يناير — مارس 2023</small>
               </span>
             </a>
             <a href="pages/experience.html" class="dropdown-item dropdown-more">
@@ -377,7 +382,7 @@
                 <polyline points="9 18 15 12 9 6" />
               </svg>
               <span class="item-text">
-                <strong>View all experience</strong>
+                <strong>عرض كل الخبرات</strong>
               </span>
             </a>
           </div>
@@ -396,7 +401,7 @@
               <polyline points="16 18 22 12 16 6" />
               <polyline points="8 6 2 12 8 18" />
             </svg>
-            Skills
+            المهارات
           </a>
           <div class="dropdown">
             <a href="pages/skills.html" class="dropdown-item">
@@ -410,7 +415,7 @@
                 <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
               </svg>
               <span class="item-text">
-                <strong>Cloud & DevOps</strong>
+                <strong>الحوسبة السحابية و DevOps</strong>
                 <small>AWS · Docker · Kubernetes · Terraform</small>
               </span>
             </a>
@@ -429,7 +434,7 @@
                 />
               </svg>
               <span class="item-text">
-                <strong>CI/CD & Automation</strong>
+                <strong>CI/CD والأتمتة</strong>
                 <small>Jenkins · GitHub Actions · Bash</small>
               </span>
             </a>
@@ -445,7 +450,7 @@
                 <line x1="12" y1="18" x2="12.01" y2="18" />
               </svg>
               <span class="item-text">
-                <strong>Mobile & Web</strong>
+                <strong>الجوال والويب</strong>
                 <small>Flutter · Dart · Firebase · HTML/CSS/JS</small>
               </span>
             </a>
@@ -460,7 +465,7 @@
                 <polyline points="9 18 15 12 9 6" />
               </svg>
               <span class="item-text">
-                <strong>View all 8 categories</strong>
+                <strong>عرض جميع مجالات المهارات</strong>
               </span>
             </a>
           </div>
@@ -479,7 +484,7 @@
               <circle cx="12" cy="8" r="7" />
               <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
             </svg>
-            Certificates
+            الشهادات
           </a>
           <div class="dropdown">
             <a href="pages/certificates.html" class="dropdown-item">
@@ -494,8 +499,8 @@
                 <line x1="12" y1="19" x2="20" y2="19" />
               </svg>
               <span class="item-text">
-                <strong>DevOps Development Training</strong>
-                <small>STEM Entrepreneurship Center</small>
+                <strong>تدريب تطوير DevOps</strong>
+                <small>مركز STEM لريادة الأعمال</small>
               </span>
             </a>
             <a href="pages/certificates.html" class="dropdown-item">
@@ -510,7 +515,7 @@
               </svg>
               <span class="item-text">
                 <strong>AWS Cloud Foundations</strong>
-                <small>AWS Academy Graduate</small>
+                <small>خريج أكاديمية AWS</small>
               </span>
             </a>
             <a href="pages/certificates.html" class="dropdown-item">
@@ -526,7 +531,7 @@
                 <path d="M6 21V9a9 9 0 0 0 9 9" />
               </svg>
               <span class="item-text">
-                <strong>Introduction to DevOps</strong>
+                <strong>مقدمة في DevOps</strong>
                 <small>Coursera</small>
               </span>
             </a>
@@ -544,7 +549,7 @@
                 <line x1="6" y1="18" x2="6.01" y2="18" />
               </svg>
               <span class="item-text">
-                <strong>Introduction to Cloud Computing</strong>
+                <strong>مقدمة في الحوسبة السحابية</strong>
                 <small>Coursera</small>
               </span>
             </a>
@@ -562,7 +567,7 @@
                 <polyline points="9 18 15 12 9 6" />
               </svg>
               <span class="item-text">
-                <strong>View all 7 certificates</strong>
+                <strong>عرض جميع الشهادات</strong>
               </span>
             </a>
           </div>
@@ -612,7 +617,7 @@
             />
             <polyline points="22,6 12,13 2,6" />
           </svg>
-          Email
+          البريد الإلكتروني
         </a>
         <a href="mailto:kirolos.esmat10@gmail.com" class="contact-btn">
           <svg
@@ -626,16 +631,16 @@
             <line x1="22" y1="2" x2="11" y2="13" />
             <polygon points="22 2 15 22 11 13 2 9 22 2" />
           </svg>
-          Send Mail
+          إرسال بريد
         </a>
       </div>
 
       <div class="footer-info">
         <p class="footer-text">
-          <a href="pages/terminal.html" class="terminal-link">&gt;_ Terminal</a>
+          <a href="../pages/terminal.html" class="terminal-link" dir="ltr">&gt;_ Terminal</a>
         </p>
         <p class="footer-text">
-          &copy; 2026 Kirolos Esmat. All rights reserved.
+          &copy; 2026 كيرلس عصمت. جميع الحقوق محفوظة.
         </p>
       </div>
     </div>
@@ -643,14 +648,14 @@
     <div class="mouse-spotlight"></div>
     <div class="testimonials-bg" id="testimonials-bg"></div>
     <canvas id="snake-canvas"></canvas>
-    <div class="snake-hud" id="snake-hud" title="Snake Game — Use Arrow Keys (↑ ↓ ← →) to play" aria-label="Snake Game Score">
+    <div class="snake-hud" id="snake-hud" title="لعبة الثعبان — استخدم أسهم لوحة المفاتيح (↑ ↓ ← →) للعب" aria-label="نتيجة لعبة الثعبان">
       <div class="snake-hud-dot"></div>
-      <span class="snake-hud-label">Score: <strong id="snake-score">0</strong></span>
+      <span class="snake-hud-label">النتيجة: <strong id="snake-score">0</strong></span>
       <span class="snake-hud-divider">/</span>
-      <span class="snake-hud-best">Best: <strong id="snake-best">0</strong></span>
+      <span class="snake-hud-best">الأفضل: <strong id="snake-best">0</strong></span>
     </div>
-    <div class="toast" id="toast">Email copied!</div>
+    <div class="toast" id="toast">تم نسخ البريد الإلكتروني!</div>
 
-    <script src="js/main.js" defer></script>
+    <script src="../js/main.js" defer></script>
   </body>
 </html>

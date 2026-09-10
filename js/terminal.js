@@ -389,7 +389,11 @@
     addToBlock(b, '<hr class="term-divider">');
     addToBlock(b, '<span class="c-muted">Goodbye! Redirecting...</span>');
     setTimeout(() => {
-      window.location.href = "../index.html";
+      let homeUrl = "../index.html";
+      try {
+        if (localStorage.getItem("lang") === "ar") homeUrl = "../ar/index.html";
+      } catch (e) {}
+      window.location.href = homeUrl;
     }, 800);
   };
 
