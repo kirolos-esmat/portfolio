@@ -20,6 +20,9 @@ function toggleTheme() {
   });
 }
 
+// ============ LANGUAGE ============
+const IS_AR = document.documentElement.lang === "ar";
+
 function copyEmail(e) {
   if (e) {
     e.preventDefault();
@@ -27,6 +30,8 @@ function copyEmail(e) {
   }
   const EMAIL = "kirolos.esmat10@gmail.com";
   const toast = document.getElementById("toast");
+  const COPIED = IS_AR ? "تم نسخ البريد الإلكتروني!" : "Email copied!";
+  const FAILED = IS_AR ? "فشل النسخ — " : "Copy failed — ";
   const showToast = (msg) => {
     if (!toast) return;
     toast.textContent = msg;
@@ -46,13 +51,10 @@ function copyEmail(e) {
       ok = document.execCommand("copy");
     } catch (err) {}
     document.body.removeChild(ta);
-    showToast(ok ? "Email copied!" : "Copy failed — " + EMAIL);
+    showToast(ok ? COPIED : FAILED + EMAIL);
   };
   if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(EMAIL).then(
-      () => showToast("Email copied!"),
-      copyFallback,
-    );
+    navigator.clipboard.writeText(EMAIL).then(() => showToast(COPIED), copyFallback);
   } else {
     copyFallback();
   }
@@ -62,15 +64,17 @@ function copyEmail(e) {
 function initTyping() {
   const typingEl = document.getElementById("typing-text");
   if (!typingEl) return;
-  const words = [
-    "automate",
-    "deploy",
-    "build",
-    "containerize",
-    "monitor",
-    "scale",
-    "ship",
-  ];
+  const words = IS_AR
+    ? ["أؤتمت", "أنشر", "أبني", "أطوّر", "أراقب", "أوسّع", "أسلّم"]
+    : [
+        "automate",
+        "deploy",
+        "build",
+        "containerize",
+        "monitor",
+        "scale",
+        "ship",
+      ];
   let wordIndex = 0,
     charIndex = 0,
     isDeleting = false;
@@ -129,7 +133,7 @@ if (spotlight) {
 // ============ BACKGROUND SKILLS TEXT ============
 const isSubPage = document.body.classList.contains("page-sub");
 
-const homeLines = [
+const homeLinesEn = [
   [
     "AWS - Amazon Web Services cloud platform for scalable infrastructure",
     "Docker - Containerize applications for consistent deployment everywhere",
@@ -239,6 +243,118 @@ const homeLines = [
   ],
 ];
 
+const homeLinesAr = [
+  [
+    "AWS - منصة الحوسبة السحابية لبناء بنية تحتية قابلة للتوسع",
+    "Docker - حاوية التطبيقات لنشر متسق في أي مكان",
+    "Kubernetes - تنسيق الحاويات على نطاق واسع عبر العناقيد",
+    "Terraform - البنية التحتية ككود لبيئات قابلة لإعادة الإنتاج",
+  ],
+  [
+    "CI/CD - خطوط تكامل وتسليم مستمر لشحن أسرع",
+    "GitHub Actions - أتمتة دورات العمل مباشرة من مستودعك",
+    "Jenkins - خادم أتمتة مفتوح المصدر للبناء والنشر",
+    "Ansible - إدارة التهيئة ونشر التطبيقات",
+  ],
+  [
+    "Flutter - ابنِ تطبيقات جوال جميلة متعددة المنصات من قاعدة كود واحدة",
+    "Dart - لغة محسّنة لتطبيقات سريعة على أي منصة",
+    "Firebase - خدمة خلفية متكاملة بقاعدة بيانات لحظية ومصادقة",
+    "Linux - إدارة الخوادم وهندسة موثوقية الأنظمة",
+  ],
+  [
+    "Cyber Park - تطبيق مواقف ذكي بالواقع المعزز بتتبع لحظي",
+    "Skrew Calculator - عداد نقاط للعبة الورق بترتيب وسجل",
+    "Grafana - راقب البنية التحتية بلوحات معلومات جميلة",
+    "TrueNAS - إدارة حلول التخزين المؤسسية",
+  ],
+  [
+    "Python - برمجة نصية وأتمتة لدورات عمل DevOps",
+    "Java - برمجة كائنية لتطبيقات المؤسسات",
+    "MySQL - إدارة قواعد البيانات العلائقية وتحسينها",
+    "Bash - سكربتات الصدفة لأتمتة الأنظمة والأدوات",
+  ],
+  [
+    "Git - ضبط الإصدارات لدورات عمل تطوير تعاونية",
+    "Virtualization - الآلات الافتراضية وإدارة مراقبات الأنظمة",
+    "Networking - TCP/IP وDNS وتوزيع الأحمال والجدران النارية",
+    "Security - تحصين البنية التحتية وإدارة الصلاحيات",
+  ],
+  [
+    "Alexandria Egypt - بكالوريوس علوم حاسب من AASTMT 2019-2023",
+    "AWS Academy Graduate - شهادة Cloud Foundations",
+    "Problem Solving - تفكير تحليلي ومهارات تصحيح الأخطاء",
+    "Languages - العربية أم، والإنجليزية احترافية، والفرنسية محدودة",
+  ],
+  [
+    "Manara - شهادات مقدمة في DevOps والحوسبة السحابية",
+    "ALX AiCE - خريج برنامج أساسيات الذكاء الاصطناعي للمسيرة المهنية",
+    "McKinsey Forward - برنامج تطوير مهني",
+    "Notion - شهادة من الصفر حتى الاحتراف",
+  ],
+  [
+    "Infrastructure as Code - بنية تحتية قابلة لإعادة الإنتاج وضبط الإصدارات",
+    "Microservices - أنماط تصميم معمارية موزعة",
+    "API Development - خدمات RESTful وتكامل الأنظمة",
+    "Agile Methodology - تطوير وتسليم تكراري",
+  ],
+  [
+    "System Reliability - ضمان التوافر والأداء على نطاق واسع",
+    "Performance - تحسين ومراقبة لأنظمة سريعة",
+    "Automation - تقليل العمل اليدوي عبر برمجة ذكية",
+    "Collaboration - عمل فعال مع فرق موزعة",
+  ],
+  [
+    "Container Orchestration - إدارة أعباء العمل المعبأة على نطاق واسع",
+    "Cloud Architecture - تصميم حلول سحابية أصلية قابلة للتوسع",
+    "DevOps Culture - جسر بين فرق التطوير والتشغيل",
+    "Mobile Development - تطبيقات متعددة المنصات بـ Flutter وDart",
+  ],
+  [
+    "Server Administration - أنظمة Linux وإدارة التخزين",
+    "Web Performance - أوقات تحميل سريعة وتوافر موثوق",
+    "Video Production - إنشاء وتحرير محتوى وسائط متعددة",
+    "Design - مبادئ UI/UX لواجهات نظيفة",
+  ],
+  [
+    "Documentation - كتابة تقنية واضحة ومشاركة المعرفة",
+    "Testing - اختبارات الوحدة واستراتيجيات الاختبار التكاملي",
+    "Deployment - إصدارات بدون توقف واستراتيجيات تراجع",
+  ],
+  [
+    "AWS EC2 - مثيلات حوسبة مرنة لأعباء عمل قابلة للتوسع",
+    "AWS S3 - تخزين كائنات للأصول الثابتة والنسخ الاحتياطية",
+    "AWS Lambda - دوال بلا خادم للحوسبة الموجهة بالأحداث",
+    "AWS RDS - خدمة قواعد بيانات علائقية مُدارة",
+  ],
+  [
+    "Docker Compose - تنسيق تطبيقات متعددة الحاويات",
+    "Helm Charts - مدير حزم لتطبيقات Kubernetes",
+    "Prometheus - إطار جمع مقاييس وتنبيهات",
+    "Nginx - إعداد وكيل عكسي وموزع أحمال",
+  ],
+  [
+    "Flutter Widgets - مكونات واجهة قابلة للتركيب لتطبيقات الجوال",
+    "State Management - أنماط Provider وBloc في Flutter",
+    "Firebase Auth - مصادقة وتخويل المستخدمين",
+    "Push Notifications - تفاعل لحظي مع المستخدمين",
+  ],
+  [
+    "SSH - وصول وإدارة آمنة للخوادم عن بُعد",
+    "SSL/TLS - إدارة الشهادات وإعداد HTTPS",
+    "DNS Management - إعداد النطاقات والتوجيه",
+    "Load Balancing - توزيع حركة المرور على الخوادم",
+  ],
+  [
+    "Graduation Project A+ - حل Cyber Park للمواقف الذكية",
+    "Published Apps - Skrew Calculator على المتاجر",
+    "Problem Solver - منهج تحليلي للتحديات المعقدة",
+    "Team Player - تواصل وتعاون فعال",
+  ],
+];
+
+const homeLines = IS_AR ? homeLinesAr : homeLinesEn;
+
 const subLines = [];
 
 // Repeat a small set of marquee rows so the background stays varied
@@ -345,6 +461,16 @@ function getPageLines() {
 const skillLines = isSubPage ? getPageLines() : homeLines;
 
 function wrapChars(text) {
+  if (IS_AR) {
+    // Arabic script is cursive: wrapping per-character breaks letter joining,
+    // so wrap per-word instead and separate words with a space.
+    return text
+      .split(" ")
+      .filter((w) => w.length > 0)
+      .map((w) => `<span class="testimonial-char">${w}</span>`)
+      .join('<span class="testimonial-char">&nbsp;</span>');
+  }
+  // Latin / English: wrap each character individually
   return text
     .split("")
     .map((c) =>

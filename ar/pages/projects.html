@@ -1,23 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects — Kirolos Esmat</title>
+    <title>المشاريع — كيرلس عصمت</title>
     <meta
       name="description"
-      content="Projects by Kirolos Esmat — Cyber Park, Skrew Calculator, and more."
+      content="مشاريع كيرلس عصمت — Cyber Park وSkrew Calculator والمزيد."
     />
-    <link rel="canonical" href="https://kirolos-esmat.github.io/portfolio/pages/projects.html" />
-    <meta property="og:title" content="Projects — Kirolos Esmat" />
-    <meta property="og:description" content="Projects by Kirolos Esmat — Cyber Park, Skrew Calculator, and more." />
+    <link
+      rel="canonical"
+      href="https://kirolos-esmat.github.io/portfolio/ar/pages/projects.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://kirolos-esmat.github.io/portfolio/pages/projects.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ar"
+      href="https://kirolos-esmat.github.io/portfolio/ar/pages/projects.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://kirolos-esmat.github.io/portfolio/pages/projects.html"
+    />
+    <script>
+      (function () {
+        try {
+          localStorage.setItem("lang", "ar");
+        } catch (e) {}
+      })();
+    </script>
+    <meta property="og:title" content="المشاريع — كيرلس عصمت" />
+    <meta property="og:description" content="مشاريع كيرلس عصمت — Cyber Park وSkrew Calculator والمزيد." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://kirolos-esmat.github.io/portfolio/pages/projects.html" />
-    <meta property="og:site_name" content="Kirolos Esmat" />
+    <meta property="og:url" content="https://kirolos-esmat.github.io/portfolio/ar/pages/projects.html" />
+    <meta property="og:site_name" content="كيرلس عصمت" />
     <meta property="og:image" content="https://kirolos-esmat.github.io/portfolio/images/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Projects — Kirolos Esmat" />
-    <meta name="twitter:description" content="Projects by Kirolos Esmat — Cyber Park, Skrew Calculator, and more." />
+    <meta name="twitter:title" content="المشاريع — كيرلس عصمت" />
+    <meta name="twitter:description" content="مشاريع كيرلس عصمت — Cyber Park وSkrew Calculator والمزيد." />
     <meta name="twitter:image" content="https://kirolos-esmat.github.io/portfolio/images/og-image.png" />
     <meta
       name="theme-color"
@@ -41,46 +66,24 @@
         } catch (e) {}
       })();
     </script>
-    <link
-      rel="alternate"
-      hreflang="en"
-      href="https://kirolos-esmat.github.io/portfolio/pages/projects.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="ar"
-      href="https://kirolos-esmat.github.io/portfolio/ar/pages/projects.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://kirolos-esmat.github.io/portfolio/pages/projects.html"
-    />
-    <script>
-      (function () {
-        try {
-          localStorage.setItem("lang", "en");
-        } catch (e) {}
-      })();
-    </script>
-    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <link rel="icon" type="image/png" href="../../images/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link href="https://fonts.cdnfonts.com/css/retropix" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
   <body class="page-sub">
     <a
-      href="../ar/pages/projects.html"
+      href="../../pages/projects.html"
       class="lang-toggle"
-      lang="ar"
-      onclick="try{localStorage.setItem('lang','ar')}catch(e){}"
-      aria-label="Switch to Arabic version"
-      >عربي</a
+      lang="en"
+      onclick="try{localStorage.setItem('lang','en')}catch(e){}"
+      aria-label="التبديل إلى النسخة الإنجليزية"
+      >English</a
     >
     <a href="../index.html" class="back-nav">
       <svg
@@ -92,14 +95,14 @@
       >
         <polyline points="15 18 9 12 15 6" />
       </svg>
-      Home
+      الرئيسية
     </a>
 
     <button
       type="button"
       class="theme-toggle"
       onclick="toggleTheme()"
-      aria-label="Toggle dark mode"
+      aria-label="تبديل الوضع الليلي"
     >
       <span class="theme-toggle-circle">
         <svg
@@ -131,14 +134,14 @@
 
     <div class="sub-container">
       <div class="page-header-box">
-        <div class="page-title">Projects</div>
-        <p class="page-subtitle">Things I've built and shipped</p>
+        <div class="page-title">المشاريع</div>
+        <p class="page-subtitle">مشاريع قمت بتطويرها وإطلاقها</p>
       </div>
 
       <!-- Skrew Calculator -->
       <div
         class="detail-card"
-        onclick="window.location.href = '../Screw-landing-page/index.html'"
+        onclick="window.location.href = '../../Screw-landing-page/index.html'"
         style="cursor: pointer"
       >
         <!-- Modern Live Badge with Animation -->
@@ -155,7 +158,7 @@
             }
           }
         </style>
-        <div style="position: absolute; top: 18px; right: 18px; z-index: 2">
+        <div style="position: absolute; top: 18px; left: 18px; z-index: 2">
           <span
             style="
               display: flex;
@@ -166,7 +169,7 @@
               font-size: 0.92em;
               font-weight: 700;
               border-radius: 18px;
-              padding: 4px 14px 4px 10px;
+              padding: 4px 10px 4px 14px;
               box-shadow: 0 2px 12px 0 rgba(39, 201, 63, 0.1);
               letter-spacing: 0.5px;
             "
@@ -204,7 +207,7 @@
                 "
               ></span>
             </span>
-            LIVE
+            مباشر
           </span>
         </div>
         <div class="card-header">
@@ -225,23 +228,22 @@
           <div>
             <div class="card-title">Skrew Calculator</div>
             <div class="card-subtitle">
-              Card Game Score Tracker · Published App
+              عداد نقاط لعبة الورق · تطبيق منشور
             </div>
           </div>
         </div>
         <div class="card-body">
           <p>
-            A mobile application designed to simplify scorekeeping for
-            multiplayer games. Provides an intuitive interface for tracking
-            rounds, highlighting the lowest scores, and maintaining a history of
-            past games. Published under <strong>Hedwig Devs</strong>.
+            تطبيق جوال مصمم لتبسيط تسجيل النقاط في الألعاب الجماعية. يوفر
+            واجهة سهلة لتتبع الجولات وإبراز أقل الدرجات والاحتفاظ بسجل
+            الألعاب السابقة. منشور تحت اسم <strong>Hedwig Devs</strong>.
           </p>
           <ul>
-            <li>Easy-to-use score tracking for multiplayer card games</li>
-            <li>History page for saved games</li>
-            <li>Minimalist UI for a seamless experience</li>
-            <li>Player rankings and performance analytics</li>
-            <li>Local data persistence for offline use</li>
+            <li>تتبع نقاط سهل الاستخدام لألعاب الورق الجماعية</li>
+            <li>صفحة سجل للألعاب المحفوظة</li>
+            <li>واجهة بسيطة لتجربة سلسة</li>
+            <li>ترتيب اللاعبين وتحليلات الأداء</li>
+            <li>تخزين محلي للبيانات للاستخدام دون اتصال</li>
           </ul>
         </div>
         <div class="project-meta">
@@ -256,7 +258,7 @@
               <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
               <line x1="12" y1="18" x2="12.01" y2="18" />
             </svg>
-            Published
+            منشور
           </span>
           <span class="project-meta-item">
             <svg
@@ -285,14 +287,14 @@
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
-            Dec 2024
+            ديسمبر 2024
           </span>
         </div>
         <div class="card-tags">
           <span class="card-tag">Flutter</span>
           <span class="card-tag">Dart</span>
           <span class="card-tag">Firebase</span>
-          <span class="card-tag">State Management</span>
+          <span class="card-tag">إدارة الحالة</span>
           <span class="card-tag">UI/UX</span>
         </div>
       </div>
@@ -315,22 +317,22 @@
           <div>
             <div class="card-title">Cyber Park</div>
             <div class="card-subtitle">
-              AR Smart Parking Application · Graduation Project
+              تطبيق مواقف ذكي بالواقع المعزز · مشروع تخرج
             </div>
           </div>
         </div>
         <div class="card-body">
           <p>
-            An augmented reality smart parking application that helps users find
-            parking spots in real-time. Built as a graduation project and
-            received an <strong>A+ grade</strong>.
+            تطبيق مواقف سيارات ذكي يعتمد على الواقع المعزز يساعد المستخدمين
+            على العثور على أماكن الوقوف لحظيًا. نُفذ كمشروع تخرج وحصل على
+            <strong>تقدير <span dir="ltr">A+</span></strong>.
           </p>
           <ul>
-            <li>Real-time parking availability tracking using AR overlays</li>
-            <li>Firebase backend for live data synchronization</li>
-            <li>Cross-platform mobile app built with Flutter</li>
-            <li>Interactive map with navigation to available spots</li>
-            <li>User authentication and parking history</li>
+            <li>تتبع توفر أماكن الوقوف لحظيًا باستخدام طبقات الواقع المعزز</li>
+            <li>خلفية Firebase لمزامنة البيانات لحظيًا</li>
+            <li>تطبيق جوال متعدد المنصات مبني بـ Flutter</li>
+            <li>خريطة تفاعلية مع توجيه لأماكن الوقوف المتاحة</li>
+            <li>مصادقة المستخدمين وسجل المواقف</li>
           </ul>
         </div>
         <div class="project-meta">
@@ -345,7 +347,7 @@
               <circle cx="12" cy="8" r="7" />
               <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
             </svg>
-            A+ Grade
+            تقدير <span dir="ltr">A+</span>
           </span>
           <span class="project-meta-item">
             <svg
@@ -409,23 +411,23 @@
             </svg>
           </div>
           <div>
-            <div class="card-title">Coming Soon</div>
+            <div class="card-title">قريبًا</div>
             <div class="card-subtitle">
-              DevOps tools & open-source contributions
+              أدوات DevOps ومساهمات مفتوحة المصدر
             </div>
           </div>
         </div>
         <div class="card-body">
           <p>
-            More projects are on the way — including DevOps automation tools,
-            infrastructure templates, and open-source contributions. Stay tuned!
+            المزيد من المشاريع في الطريق — بما فيها أدوات أتمتة DevOps وقوالب
+            بنية تحتية ومساهمات مفتوحة المصدر. تابعونا!
           </p>
         </div>
       </div>
 
       <div class="footer-info" style="animation-delay: 0.1s">
         <p class="footer-text">
-          &copy; 2026 Kirolos Esmat. All rights reserved.
+          &copy; 2026 كيرلس عصمت. جميع الحقوق محفوظة.
         </p>
       </div>
     </div>
@@ -438,7 +440,7 @@
       <div class="orb orb-4"></div>
     </div>
     <canvas id="snake-canvas"></canvas>
-    <div class="toast" id="toast">Email copied!</div>
-    <script src="../js/main.js"></script>
+    <div class="toast" id="toast">تم نسخ البريد الإلكتروني!</div>
+    <script src="../../js/main.js"></script>
   </body>
 </html>

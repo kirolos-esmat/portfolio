@@ -594,6 +594,16 @@
       </svg>
       cd ~
     </a>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("lang") === "ar") {
+            var b = document.querySelector(".term-back");
+            if (b) b.href = "../ar/index.html";
+          }
+        } catch (e) {}
+      })();
+    </script>
 
     <div class="matrix-toggle active" id="matrix-toggle" title="Toggle matrix rain">
       <span>Matrix</span>
@@ -603,7 +613,7 @@
     <div class="terminal-window">
       <div class="term-titlebar">
         <div class="term-dots">
-          <div class="term-dot red" onclick="window.location.href='../index.html'" title="Close"></div>
+          <div class="term-dot red" onclick="var h='../index.html';try{if(localStorage.getItem('lang')==='ar')h='../ar/index.html';}catch(e){}window.location.href=h;" title="Close"></div>
           <div class="term-dot yellow" title="Minimize"></div>
           <div class="term-dot green" title="Maximize"></div>
         </div>

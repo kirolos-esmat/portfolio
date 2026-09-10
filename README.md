@@ -31,6 +31,14 @@ A modern, responsive portfolio website showcasing my work as a DevOps Engineer a
 - **Interactive navigation** with dropdown menus
 - **Copy email** functionality with toast notifications
 
+### 🌐 Internationalization & Localization (i18n)
+
+- **Default English Experience**: Loads English by default on first visit and direct page navigation
+- **Full Arabic Localization (العربية)**: Native translation with full right-to-left (RTL) layout support
+- **Cairo Typography**: Styled with Google Fonts "Cairo" for Arabic scripts and clean letter-spacing
+- **Bidirectional UI**: Mirrored controls, navigation buttons, back arrows, and badge indicators
+- **Multilingual SEO**: Comprehensive `hreflang` tags (`en`, `ar`, `x-default`) and sitemap indexing
+
 ### 🏗️ Technical Highlights
 
 - **Pure vanilla JavaScript** - no frameworks or dependencies
@@ -43,14 +51,21 @@ A modern, responsive portfolio website showcasing my work as a DevOps Engineer a
 
 ```
 portfolio/
-├── index.html               # Homepage
+├── index.html               # Default Homepage (English)
+├── ar/                      # Arabic Localized Version (RTL)
+│   ├── index.html           # Arabic Homepage
+│   └── pages/               # Localized Arabic Subpages
+│       ├── projects.html    # Arabic Projects
+│       ├── experience.html  # Arabic Experience
+│       ├── skills.html      # Arabic Skills
+│       └── certificates.html# Arabic Certificates
 ├── css/
-│   └── style.css            # Main stylesheet (mobile-first)
+│   └── style.css            # Main stylesheet (mobile-first & RTL support)
 ├── js/
-│   ├── main.js              # Core JavaScript (theme, snake game, background)
+│   ├── main.js              # Core JavaScript (theme, marquee, typing, language)
 │   └── terminal.js          # Interactive terminal logic
 ├── images/                  # Image assets (logo, og-image)
-├── pages/
+├── pages/                   # English Subpages
 │   ├── projects.html        # Projects showcase
 │   ├── experience.html      # Work experience timeline
 │   ├── skills.html          # Technical skills
@@ -58,7 +73,7 @@ portfolio/
 │   └── terminal.html        # Interactive terminal easter egg
 ├── Screw-landing-page/      # Featured project landing page
 ├── robots.txt               # Crawler rules
-└── sitemap.xml              # Search engine sitemap
+└── sitemap.xml              # Search engine sitemap (bilingual URLs)
 ```
 
 ## 🚀 Quick Start
@@ -210,6 +225,15 @@ See the [LICENSE](LICENSE) file for full details.
 - GitHub: [@kirolosesmat](https://github.com/kirolosesmat)
 
 ## 📝 Changelog
+
+### v4
+
+- **English Default**: Ensured the English version is the strict default landing experience for all visitors without forced redirection.
+- **Arabic Localization (العربية)**: Complete native Arabic translations across Homepage, Projects, Experience, Skills, and Certificates (`ar/`).
+- **RTL Design System**: Full Right-to-Left (RTL) layout with mirrored navigation, back buttons, status indicators, and custom Cairo typography.
+- **Cursive Script Optimization**: Word-level animation wrapping in background text marquee to preserve Arabic cursive ligature connectivity.
+- **Multilingual SEO**: Added alternate `hreflang` tags (`en`, `ar`, `x-default`) on every page and updated `sitemap.xml` with all localized URLs.
+- **Interactive Language Toggle**: Smooth one-click language switching between English and Arabic with state persistence.
 
 ### v3
 
