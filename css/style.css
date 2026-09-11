@@ -1438,7 +1438,8 @@ h1 {
 
 /* Subpages: hide background text entirely */
 .page-sub .testimonials-bg,
-.page-sub #snake-canvas {
+.page-sub #snake-canvas,
+.page-sub #badge-canvas {
   display: none !important;
 }
 .testimonial-row {
@@ -1488,15 +1489,26 @@ h1 {
   z-index: 5;
 }
 
+/* ========== 3D NAME TAG / BADGE CANVAS ========== */
+#badge-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 40;
+}
+
 /* ========== SNAKE HUD ========== */
 .snake-hud {
   position: fixed;
-  top: 16px;
-  left: 16px;
+  top: 18px;
+  left: 50%;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 6px 16px;
   background: var(--surface-glass);
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
@@ -1512,14 +1524,14 @@ h1 {
   user-select: none;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-8px) scale(0.95);
+  transform: translateX(-50%) translateY(-8px) scale(0.95);
   transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .snake-hud.show {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0) scale(1);
+  transform: translateX(-50%) translateY(0) scale(1);
 }
 
 .snake-hud:hover {
@@ -1578,10 +1590,10 @@ h1 {
 }
 
 @keyframes shake {
-  10%, 90% { transform: translate3d(-2px, 0, 0); }
-  20%, 80% { transform: translate3d(2px, 0, 0); }
-  30%, 50%, 70% { transform: translate3d(-3px, 0, 0); }
-  40%, 60% { transform: translate3d(3px, 0, 0); }
+  10%, 90% { transform: translate3d(calc(-50% - 2px), 0, 0); }
+  20%, 80% { transform: translate3d(calc(-50% + 2px), 0, 0); }
+  30%, 50%, 70% { transform: translate3d(calc(-50% - 3px), 0, 0); }
+  40%, 60% { transform: translate3d(calc(-50% + 3px), 0, 0); }
 }
 
 .page-sub .snake-hud {
@@ -1615,6 +1627,91 @@ h1 {
 /* ========== RESPONSIVE ========== */
 /* Mobile Performance: Disable heavy effects on small screens */
 @media (max-width: 767px) {
+  /* Layout & container padding */
+  body.page-home {
+    padding: 24px 12px 36px;
+  }
+  .container {
+    padding: 10px 8px;
+    max-width: 100%;
+  }
+
+  /* Header & Avatar */
+  header {
+    margin-bottom: 18px;
+  }
+  .avatar {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 14px;
+    border-radius: 18px;
+  }
+
+  /* Typography on mobile */
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    letter-spacing: -0.035em;
+  }
+  html[lang="ar"] h1 {
+    font-size: 1.85rem;
+    letter-spacing: 0;
+  }
+
+  .hero-statement {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35ch;
+    min-height: 26px;
+  }
+  html[lang="ar"] .hero-statement {
+    font-size: 0.98rem;
+  }
+
+  .bio {
+    font-size: 0.85rem;
+    line-height: 1.62;
+    max-width: 360px;
+    margin: 0 auto 18px;
+    padding: 0 4px;
+    letter-spacing: -0.005em;
+  }
+  html[lang="ar"] .bio {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    max-width: 370px;
+  }
+
+  /* Tech badges */
+  .tech-badges {
+    gap: 6px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .badge {
+    padding: 5px 11px;
+    font-size: 0.72rem;
+    min-height: 28px;
+  }
+
+  /* Navigation on mobile */
+  .nav-container {
+    max-width: 360px;
+    width: 100%;
+    gap: 10px;
+  }
+  .nav-button {
+    padding: 13px 18px;
+    font-size: 0.92rem;
+    min-height: 50px;
+  }
+
   /* Simplify glassmorphic effects */
   .theme-toggle,
   .back-nav,
@@ -1635,6 +1732,19 @@ h1 {
   .contact-btn,
   .detail-card {
     box-shadow: var(--shadow-sm);
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 1.55rem;
+  }
+  .hero-statement {
+    font-size: 0.88rem;
+  }
+  .bio {
+    font-size: 0.80rem;
+    line-height: 1.58;
   }
 }
 
@@ -1776,8 +1886,12 @@ html[dir="rtl"] .dropdown-more:hover svg {
   transform: scaleX(-1) translateX(3px);
 }
 html[dir="rtl"] .snake-hud {
-  left: auto;
-  right: 16px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%) translateY(-8px) scale(0.95);
+}
+html[dir="rtl"] .snake-hud.show {
+  transform: translateX(-50%) translateY(0) scale(1);
 }
 html[dir="rtl"] .nav-badge {
   right: auto;
@@ -1809,3 +1923,114 @@ html[dir="rtl"] .terminal-link {
   display: inline-flex;
   align-items: center;
 }
+
+/* ========== 3D BADGE INSPECTION MODAL ========== */
+#badge-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(4, 7, 13, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.badge-inspecting #badge-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.badge-inspecting #badge-canvas {
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.badge-close-btn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(15, 22, 36, 0.85);
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
+  opacity: 0;
+  pointer-events: none;
+}
+
+html[dir="rtl"] .badge-close-btn {
+  right: auto;
+  left: 24px;
+}
+
+body.badge-inspecting .badge-close-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.badge-close-btn:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: rgba(56, 189, 248, 0.6);
+  color: #38bdf8;
+  transform: scale(1.08) rotate(90deg);
+}
+
+.badge-inspect-hint {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(11, 16, 28, 0.90);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 22px;
+  border-radius: 999px;
+  color: #cbd5e1;
+  font-family: 'SF Mono', monospace, -apple-system;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  pointer-events: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  white-space: nowrap;
+  z-index: 10001;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.badge-inspecting .badge-inspect-hint {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .badge-close-btn {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+  html[dir="rtl"] .badge-close-btn {
+    left: 16px;
+  }
+  .badge-inspect-hint {
+    bottom: 24px;
+    font-size: clamp(9.5px, 2.75vw, 11px);
+    padding: 7px 16px;
+    max-width: 95vw;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+  }
+}
+
