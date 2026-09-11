@@ -23,13 +23,22 @@ A modern, responsive portfolio website showcasing my work as a DevOps Engineer a
 - **Performance optimized** - heavy effects disabled on small screens
 - **Floating avatar animation** across all devices
 
+### 🪪 3D Interactive Physics ID Badge (WebGL)
+
+- **Verlet Rope & Ribbon Physics**: Dynamic cloth/strap simulation powered by Three.js with realistic pendulum swing, drag-and-throw velocity momentum, and damped settling.
+- **Physical Hardware Detailing**: 3D extruded rounded card chassis, satin-titanium grommet ring, carabiner loop, swivel collar, and ribbon crimp clamp.
+- **Dual-Sided High-DPI Textures**: 1280×2048 canvas with 16x anisotropic filtering featuring crystal-clear portrait photo, bold typography, tech stack badges, satin gold EMV microchip, security barcode, and flip-side QR code with KE pulse logo.
+- **Click-to-Inspect Modal**: Seamlessly glides to center screen with frosted glass backdrop blur, full 3D turntable rotation, and tap-to-flip interaction.
+- **Mobile Responsive & Bilingual**: Custom mobile scaling (hangs clear of hero text, expands to 85% width in inspect mode, single-line hint pill) with auto-mirrored anchor coordinates for RTL Arabic mode.
+
 ### 🎮 Interactive Elements
 
-- **Snake game** background (desktop only)
-- **Dynamic typewriter** effect for DevOps actions
-- **Animated skill badges** with hover states
-- **Interactive navigation** with dropdown menus
-- **Copy email** functionality with toast notifications
+- **3D Lanyard Name Tag**: Draggable, throwable, and clickable physical ID badge.
+- **Snake game background**: Retro arcade easter egg with persistent high score and top-centered score HUD.
+- **Dynamic typewriter**: Cyclic action verb animation with multi-word cycling.
+- **Animated skill badges**: Responsive pill badges with hover states.
+- **Interactive navigation**: Multi-tier dropdown menus and direct links.
+- **Copy email**: Non-blocking clipboard action with animated toast notifications.
 
 ### 🌐 Internationalization & Localization (i18n)
 
@@ -41,11 +50,13 @@ A modern, responsive portfolio website showcasing my work as a DevOps Engineer a
 
 ### 🏗️ Technical Highlights
 
-- **Pure vanilla JavaScript** - no frameworks or dependencies
-- **CSS Variables** for consistent theming
-- **Mobile-first CSS** with three responsive breakpoints
-- **Optimized animations** with `requestAnimationFrame`
-- **Semantic HTML5** for better SEO and accessibility
+- **Pure vanilla JavaScript & Three.js** - zero heavy frameworks, WebGL hardware-accelerated 3D physics
+- **Verlet Numerical Integration** - realistic multi-segment rope and cloth ribbon dynamics
+- **High-DPI Dynamic Texturing** - crisp 1280×2048 2D canvas dynamically rendered onto 3D geometry
+- **CSS Variables** for consistent theming and micro-interactions
+- **Mobile-first CSS** with responsive breakpoints and bidirectional RTL support
+- **Optimized animations** with `requestAnimationFrame` and sub-stepped physics
+- **Semantic HTML5** for superior SEO, accessibility, and performance
 
 ## 🗂️ Project Structure
 
@@ -62,9 +73,11 @@ portfolio/
 ├── css/
 │   └── style.css            # Main stylesheet (mobile-first & RTL support)
 ├── js/
+│   ├── badge.js             # 3D interactive physics lanyard ID badge & inspect mode
+│   ├── three.min.js         # Three.js 3D library bundle
 │   ├── main.js              # Core JavaScript (theme, marquee, typing, language)
 │   └── terminal.js          # Interactive terminal logic
-├── images/                  # Image assets (logo, og-image)
+├── images/                  # Image assets (photo, logo, og-image)
 ├── pages/                   # English Subpages
 │   ├── projects.html        # Projects showcase
 │   ├── experience.html      # Work experience timeline
@@ -225,6 +238,16 @@ See the [LICENSE](LICENSE) file for full details.
 - GitHub: [@kirolosesmat](https://github.com/kirolosesmat)
 
 ## 📝 Changelog
+
+### v5
+
+- **3D Interactive Physics Lanyard ID Badge**: Integrated WebGL/Three.js physical ID badge with Verlet multi-segment rope simulation, dynamic drop-in entrance, realistic pendulum oscillation, pointer dragging, and momentum throw physics.
+- **Cinematic Click-to-Inspect Mode**: Smooth ease-in-out transition from hanging state to viewport center, featuring a frosted glass backdrop blur, 3D turntable mouse/touch orbit, tap-to-flip dual-sided inspection, and seamless lanyard retraction.
+- **High-DPI Dual-Sided Visual Craft**: High-resolution 1280×2048 canvas textures with 16x anisotropic filtering, featuring crystal-clear portrait rendering with zero glare/vignette haze, bold typography, tech badges, satin gold EMV microchip, security barcode, and flip-side QR code with KE pulse logo.
+- **Mobile-First Responsive Dynamics**: Custom mobile rope geometry preventing overlap with hero titles and bio copy, enlarged 85%-width inspect view, and uncollapsed single-line interaction hint pill.
+- **Bilingual Mirrored Physics (LTR/RTL)**: Automatic physical anchor coordinate mirroring between English (top-left) and Arabic (top-right), accompanied by localized Arabic interaction guidance.
+- **Top-Centered Snake Score HUD**: Repositioned score indicator to top-center with responsive shake animations and zero lanyard obstruction.
+- **Standardized Credentials**: Aligned university location to Alexandria, EG across badge faces and metadata.
 
 ### v4
 
